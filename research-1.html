@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>沈有乾与 Ladd-Franklin | 研究详情</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 折叠面板样式 */
+        .accordion { background-color: #eee; color: var(--primary-color, #2c3e50); cursor: pointer; padding: 18px; width: 100%; border: none; text-align: left; outline: none; font-size: 1.2rem; transition: 0.4s; margin-top: 15px; border-radius: 5px; font-weight: bold; }
+        .active, .accordion:hover { background-color: #ddd; border-left: 5px solid var(--secondary-color, #e74c3c); }
+        .panel { padding: 0 18px; background-color: white; display: none; overflow: hidden; border-left: 3px solid var(--primary-color, #2c3e50); margin-bottom: 10px; border-radius: 0 0 5px 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .panel p { margin: 15px 0; }
+        .ref-link { color: var(--secondary-color, #e74c3c); text-decoration: none; font-weight: bold; }
+        .scholar-link { color: #2980b9; text-decoration: none; font-weight: bold; border-bottom: 1px dashed #2980b9; }
+        .scholar-link:hover { color: #1abc9c; border-bottom: 1px solid #1abc9c; }
+
+        /* 逻辑符号翻译器样式 */
+        .widget-container { display: flex; flex-wrap: wrap; gap: 20px; margin: 20px 0; border: 1px solid #ccc; padding: 20px; border-radius: 8px; background: #fafafa; }
+        .symbol-list { flex: 1; min-width: 200px; display: flex; flex-direction: column; gap: 10px; }
+        .symbol-btn { padding: 10px; border: 1px solid #bdc3c7; background: white; cursor: pointer; border-radius: 4px; font-size: 1.1rem; text-align: left; transition: 0.2s; }
+        .symbol-btn:hover { border-color: #3498db; }
+        .symbol-btn.selected { background: #3498db; color: white; border-color: #3498db; font-weight: bold; }
+        .symbol-detail { flex: 2; min-width: 300px; background: white; padding: 20px; border-radius: 4px; border-left: 4px solid #3498db; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .detail-title { color: #2c3e50; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+
+        /* 锚点目标高亮特效 */
+        .pub-list li {
+            padding: 5px;
+            border-radius: 4px;
+            transition: background-color 1s ease;
+        }
+        .pub-list li:target {
+            background-color: #fff3cd; /* 被选中时变成淡黄色 */
+            border-left: 4px solid var(--secondary-color, #e74c3c);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <h1 class="logo">ModLogHistory</h1>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav_home">首页</a></li>
+                <li><a href="index.html#about" data-i18n="nav_about">项目简介</a></li>
+                <li><a href="index.html#research" data-i18n="nav_research">研究计划</a></li>
+                <li><a href="index.html#team" data-i18n="nav_team">研究团队</a></li>
+                <li><a href="index.html#publications" data-i18n="nav_publications">成果与资料</a></li>
+                <li><a href="https://github.com/Raycaesar/CN_logicians_EML/discussions/1" target="_blank" data-i18n="nav_forum">讨论区</a></li>
+            </ul>
+            <button id="lang-toggle">EN / 中文</button>
+        </div>
+    </nav>
+
+    <header class="hero" style="padding: 2rem 20px;">
+        <h2 data-i18n="page_title">研究版块 I：沈有乾与 Ladd-Franklin</h2>
+        <p data-i18n="page_subtitle">探寻现代模态逻辑的先声与中国学者的早期捍卫</p>
+    </header>
+
+    <main class="content-container" style="max-width: 900px; margin: 20px auto; padding: 0 20px;">
+        
+        <button class="accordion" data-i18n="acc_1">1. 研究背景：谁才是模态逻辑的开创者？</button>
+        <div class="panel">
+            <p data-i18n="p_1_1">一般认为，现代模态逻辑起源于 <strong>C.I. Lewis</strong> 或 <strong>Hugh MacColl</strong>。然而，最近这一看法受到了挑战。</p>
+            <p data-i18n="p_1_2">在 <a href="https://sites.google.com/view/unilog2025/k-speakers/roy-cook" target="_blank" class="ref-link">Unilog 2025 会议</a> 中，著名逻辑学家 Roy Cook 提出了极具冲击力的观点：他认为 <a href="scholar.html?id=ladd-franklin" class="scholar-link">Christine Ladd-Franklin (CLF)</a> 在更早的几十年前，实际上已经有了模态逻辑的工作。她的代数逻辑蕴含了一个接近今天系统 D 的框架。如果这一假设成立，我们需要重新审视从皮尔士到刘易斯这段时期模态逻辑的演变。</p>
+        </div>
+
+        <button class="accordion" data-i18n="acc_2">2. CLF 的逻辑：从 19 世纪符号到现代语言</button>
+        <div class="panel">
+            <p data-i18n="p_2_1">要理解 CLF 的贡献，首先需要跨越符号学的障碍。以下交互面板展示了她的核心符号与现代逻辑的对应关系（点击左侧符号查看解析）：</p>
+            
+            <div class="widget-container">
+                <div class="symbol-list" id="symbol-buttons">
+                    <button class="symbol-btn selected" onclick="showSymbol('exclusion', this)">(a ∨ b) [Exclusion]</button>
+                    <button class="symbol-btn" onclick="showSymbol('inclusion', this)">(a ∨̄ b) [Inclusion]</button>
+                    <button class="symbol-btn" onclick="showSymbol('universe', this)">∞ & 0 [Universe/Zero]</button>
+                    <button class="symbol-btn" onclick="showSymbol('antilogism', this)">Antilogism</button>
+                </div>
+                <div class="symbol-detail">
+                    <h3 class="detail-title" id="detail-title">符号: (a ∨ b)</h3>
+                    <p><strong>现代对应:</strong> <span id="detail-modern">¬(A ∧ B) / A 和 B 不相容</span></p>
+                    <br>
+                    <p><strong>学术解析:</strong> <span id="detail-desc">CLF 称其为“排除 (Exclusion)”。Roy Cook 认为，这一基于不相容性的代数运算，在更深层次上触及了模态逻辑中的一致性与可能性（类似于模态系统 D 中的算子性质）。</span></p>
+                </div>
+            </div>
+        </div>
+
+      
+        <button class="accordion" data-i18n="acc_3">3. 1927年 沈有乾的工作与捍卫</button>
+        <div class="panel">
+            <p data-i18n="p_3_1">1927年，<a href="scholar.html?id=shen-youqian" class="scholar-link">沈有乾 (Eugene Shen)</a> 发表了<a href="#ref-shen-1927" class="ref-link">文章</a>，专门对 Ladd-Franklin 的系统进行了严密捍卫。如果 Roy Cook 的理论成立，这意味着沈有乾在当时已经接触到了现代模态逻辑的最前沿理念。</p>
+            <p data-i18n="p_3_2">值得注意的是，1928年 CLF 发表过一篇 <a href="#ref-lf-1928" class="ref-link">notes</a>，指责 W.E. Johnson 盗用了她发明的 "Antilogism" 一词。沈有乾在这一学术争议背景下的发声，展现了中国学者对早期代数逻辑发展的敏锐追踪。我们将深入搜集并考察他是否有相关的中文文献传世。</p>
+        </div>
+        <button class="accordion" data-i18n="acc_4">4. C.I. Lewis 对 CLF 的评价与体系演变</button>
+        <div class="panel">
+            <p data-i18n="p_4_1">我们将进一步梳理 在C.I. Lewis 的<a href="#ref-lewis-1918" class="ref-link">著作</a> 对 CLF 的评价和引用。通过对比这两种体系的演变，探究模态逻辑是如何从早期的代数系统（如 CLF 的反三段论）一步步演化出严谨的严格蕴涵系统与模态公理的。</p>
+        </div>
+
+        <h3 style="margin-top: 40px; color: var(--primary-color, #2c3e50); border-bottom: 2px solid var(--secondary-color, #e74c3c); padding-bottom: 10px;" data-i18n="acc_5">5. 参考资料</h3>
+        <div style="background-color: white; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 30px;">
+            <ul class="pub-list">
+                <li id="ref-lf-1883">Ladd-Franklin, C. (1883). On the Algebra of Logic. In C. S. Peirce (Ed.), <em>Studies in Logic</em> (pp. 17-71). Boston: Little, Brown, and Company.</li>
+                
+                <li id="ref-lf-1928">Ladd-Franklin, C. (1928). The Antilogism. <em>Mind</em>, 37(148), 532-534.</li>
+                
+                <li id="ref-shen-1927">Shen, E. (1927). The Ladd-Franklin Formula in Logic: The Antilogism. <em>Mind</em>, 36(141), 54-60.</li>
+                
+                <li id="ref-cook-ajl">Cook, R. (2024/2025). Understanding Christine Ladd-Franklin’s Logic. <em>Australasian Journal of Logic</em>.</li>
+                
+                
+                <li id="ref-lewis-1918">Lewis, C.I. (1918). <em>A Survey of Symbolic Logic</em>. Berkeley: University of California Press.</li>
+                
+                <li id="ref-lewis-1959">Lewis, C.I. & Langford, C.H. (1959). <em>Symbolic Logic</em> (2nd ed.). New York: Dover Publications.</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; background: var(--primary-color, #2c3e50); color: white; margin-top: 40px;">
+        <p>&copy; 2026 Project on Early Chinese Logicians & Modal Logic.</p>
+    </footer>
+
+    <script>
+        // === 1. 折叠面板逻辑 ===
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+
+        // === 2. 交互式翻译器逻辑 ===
+        const symbolData = {
+            zh: {
+                exclusion: { title: "符号: (a ∨ b)", modern: "¬(A ∧ B) / A 和 B 不相容", desc: "CLF 称其为“排除 (Exclusion)”。Roy Cook 认为，这一基于不相容性的代数运算，在更深层次上触及了模态逻辑中的一致性与可能性（类似于模态系统 D 中的算子性质）。" },
+                inclusion: { title: "符号: (a ∨̄ b)", modern: "A ∨ B / A 或 B（传统的逻辑或）", desc: "CLF 称其为“包含 (Inclusion)”。这是不相容关系的对立面，用来构建经典三段论的代数基石。" },
+                universe: { title: "符号: ∞ 与 0", modern: "1 (⊤ 真) 与 0 (⊥ 假)", desc: "CLF 使用无穷大符号 ∞ 来表示论域（真值），用 0 表示空集（假值）。这体现了 19 世纪将逻辑高度算术化的时代特征。" },
+                antilogism: { title: "公式: (a ∨ b)(c ∨ d)(e ∨ f) < 0", modern: "A, B, C 不能同时为真（不一致的三元组）", desc: "这就是著名的“反三段论 (Antilogism)”。任何有效的三段论都可以被转换为三个命题同时不成立的形式。沈有乾 1927 年的文章主要就是对这一公式的几何和逻辑属性进行捍卫。" }
+            },
+            en: {
+                exclusion: { title: "Symbol: (a ∨ b)", modern: "¬(A ∧ B) / A and B are incompatible", desc: "CLF termed this 'Exclusion'. Roy Cook argues that this algebraic operation based on incompatibility deeply touches upon consistency and possibility in modal logic (similar to operator properties in System D)." },
+                inclusion: { title: "Symbol: (a ∨̄ b)", modern: "A ∨ B / A or B (Classical logical OR)", desc: "CLF termed this 'Inclusion'. It is the dual of the exclusion relation and serves as an algebraic cornerstone for classical syllogisms." },
+                universe: { title: "Symbol: ∞ and 0", modern: "1 (⊤ True) and 0 (⊥ False)", desc: "CLF used the infinity symbol ∞ for the universe of discourse (Truth) and 0 for the empty set (Falsity), reflecting the highly arithmetized nature of 19th-century logic." },
+                antilogism: { title: "Formula: (a ∨ b)(c ∨ d)(e ∨ f) < 0", modern: "A, B, and C cannot all be true (Inconsistent Triad)", desc: "This is the famous 'Antilogism'. Any valid syllogism can be transformed into a form where three propositions are mutually inconsistent. Eugene Shen's 1927 paper primarily defended the geometric and logical properties of this formula." }
+            }
+        };
+
+        let currentSymbol = 'exclusion';
+
+        function showSymbol(symbolKey, btnElement) {
+            currentSymbol = symbolKey;
+            // 更新按钮高亮
+            document.querySelectorAll('.symbol-btn').forEach(btn => btn.classList.remove('selected'));
+            btnElement.classList.add('selected');
+            // 更新文本内容
+            document.getElementById('detail-title').textContent = symbolData[currentLang][symbolKey].title;
+            document.getElementById('detail-modern').textContent = symbolData[currentLang][symbolKey].modern;
+            document.getElementById('detail-desc').textContent = symbolData[currentLang][symbolKey].desc;
+        }
+
+        // === 3. 中英双语切换逻辑 ===
+        const translations = {
+            zh: {
+                nav_home: "首页", nav_about: "项目简介", nav_research: "研究计划", nav_team: "研究团队", nav_publications: "成果与资料", nav_forum: "讨论区",
+                page_title: "研究版块 I：沈有乾与 Ladd-Franklin", page_subtitle: "探寻现代模态逻辑的先声与中国学者的早期捍卫",
+                acc_1: "1. 研究背景：谁才是模态逻辑的开创者？",
+                p_1_1: "一般认为，现代模态逻辑起源于 <strong>C.I. Lewis</strong> 或 <strong>Hugh MacColl</strong>。然而，最近这一看法受到了挑战。",
+                p_1_2: "在 <a href='https://sites.google.com/view/unilog2025/k-speakers/roy-cook' target='_blank' class='ref-link'>Unilog 2025 会议</a> 中，著名逻辑学家 Roy Cook 提出了极具冲击力的观点：他认为 <a href='scholar.html?id=ladd-franklin' class='scholar-link'>Christine Ladd-Franklin (CLF)</a> 在更早的几十年前，实际上已经有了模态逻辑的工作。她的代数逻辑蕴含了一个接近今天系统 D 的框架。如果这一假设成立，我们需要重新审视从皮尔士到刘易斯这段时期模态逻辑的演变。",
+                acc_2: "2. CLF 的逻辑：从 19 世纪符号到现代语言",
+                p_2_1: "要理解 CLF 的贡献，首先需要跨越符号学的障碍。以下交互面板展示了她的核心符号与现代逻辑的对应关系（点击左侧符号查看解析）：",
+                acc_3: "3. 1927年 沈有乾的工作与捍卫",
+                p_3_1: "1927年，<a href='scholar.html?id=shen-youqian' class='scholar-link'>沈有乾 (Eugene Shen)</a> 发表了<a href='#ref-shen-1927' class='ref-link'>文章</a>，专门对 Ladd-Franklin 的系统进行了严密捍卫。如果 Roy Cook 的理论成立，这意味着沈有乾在当时已经接触到了现代模态逻辑的最前沿理念。",
+                p_3_2: "值得注意的是，1928年 CLF 发表过一篇 <a href='#ref-lf-1928' class='ref-link'>notes</a>，指责 W.E. Johnson 盗用了她发明的 \"Antilogism\" 一词。沈有乾在这一学术争议背景下的发声，展现了中国学者对早期代数逻辑发展的敏锐追踪。我们将深入搜集并考察他是否有相关的中文文献传世。",
+                acc_4: "4. C.I. Lewis 对 CLF 的评价与体系演变",
+                p_4_1: "我们将进一步梳理 在C.I. Lewis 的<a href='#ref-lewis-1918' class='ref-link'>著作</a> 对 CLF 的评价和引用。通过对比这两种体系的演变，探究模态逻辑是如何从早期的代数系统（如 CLF 的反三段论）一步步演化出严谨的严格蕴涵系统与模态公理的。",
+                acc_5: "5. 参考资料"
+            },
+            en: {
+                nav_home: "Home", nav_about: "About", nav_research: "Research Plan", nav_team: "Team", nav_publications: "Publications", nav_forum: "Forum",
+                page_title: "Theme I: Eugene Shen & Ladd-Franklin", page_subtitle: "Tracing the Precursors of Modal Logic and Early Defenses by Chinese Scholars",
+                acc_1: "1. Background: Who is the True Founder of Modal Logic?",
+                p_1_1: "It is generally believed that modern modal logic originated with <strong>C.I. Lewis</strong> or <strong>Hugh MacColl</strong>. However, this view has recently been challenged.",
+                p_1_2: "At the <a href='https://sites.google.com/view/unilog2025/k-speakers/roy-cook' target='_blank' class='ref-link'>Unilog 2025</a> conference, renowned logician Roy Cook presented a striking argument: he believes <a href='scholar.html?id=ladd-franklin' class='scholar-link'>Christine Ladd-Franklin (CLF)</a> had already done work on modal logic decades earlier. Her algebraic logic implies a framework close to today's System D. If this hypothesis holds, we must re-examine the evolution of modal logic from Peirce to Lewis.",
+                acc_2: "2. CLF's Logic: From 19th Century Symbols to Modern Language",
+                p_2_1: "To understand CLF's contributions, we must first overcome semiotic barriers. The interactive panel below shows the correspondence between her core symbols and modern logic (Click symbols on the left to view parsing):",
+                acc_3: "3. Eugene Shen's 1927 Work and Defense",
+                p_3_1: "In 1927, <a href='scholar.html?id=shen-youqian' class='scholar-link'>Eugene Shen</a> published a <a href='#ref-shen-1927' class='ref-link'>paper</a> specifically defending Ladd-Franklin's system rigorously. If Roy Cook's theory stands, it implies Shen was engaging with the most cutting-edge concepts of modern modal logic at that time.",
+                p_3_2: "Notably, in 1928, CLF published <a href='#ref-lf-1928' class='ref-link'>notes</a> accusing W.E. Johnson of plagiarizing her coined term 'Antilogism'. Shen's voice during this academic dispute demonstrates Chinese scholars' acute tracking of early algebraic logic developments. We will investigate whether he left relevant Chinese literature on this.",
+                acc_4: "4. C.I. Lewis's Evaluation of CLF and System Evolution",
+                p_4_1: "We will further sort out C.I. Lewis's evaluations and citations of CLF in his <a href='#ref-lewis-1918' class='ref-link'>A Survey of Symbolic Logic</a>. By comparing the evolution of these two systems, we will explore how modal logic evolved step-by-step from early algebraic systems (like CLF's antilogism) into rigorous strict implication systems and multiple modal axioms.",
+                acc_5: "5. References"
+            }
+        };
+
+        let currentLang = 'zh';
+        document.getElementById('lang-toggle').addEventListener('click', () => {
+            currentLang = currentLang === 'zh' ? 'en' : 'zh';
+            
+            // 翻译普通的带 data-i18n 的文本
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key]; // 用 innerHTML 保护加粗和超链接
+                }
+            });
+
+            // 更新交互器中的文本状态
+            document.getElementById('detail-title').textContent = symbolData[currentLang][currentSymbol].title;
+            document.getElementById('detail-modern').textContent = symbolData[currentLang][currentSymbol].modern;
+            document.getElementById('detail-desc').textContent = symbolData[currentLang][currentSymbol].desc;
+        });
+    </script>
+</body>
+</html>
