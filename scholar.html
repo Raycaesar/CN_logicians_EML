@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学者档案 | Scholar Profile</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #c0392b;
+            --bg-color: #f9fbfd;
+            --text-color: #333;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text-color); background: var(--bg-color); }
+        
+        nav { background: var(--primary-color); color: white; padding: 1rem 0; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: auto; padding: 0 20px; }
+        .back-link { color: white; text-decoration: none; font-weight: bold; border-bottom: 1px solid transparent; transition: 0.3s; }
+        .back-link:hover { border-bottom: 1px solid white; }
+        #lang-toggle { background: transparent; border: 1px solid white; color: white; padding: 5px 10px; cursor: pointer; border-radius: 4px; }
+        #lang-toggle:hover { background: white; color: var(--primary-color); }
+
+        .hero { background: #e8f1f5; padding: 3rem 20px; text-align: center; border-bottom: 3px solid var(--secondary-color); }
+        .hero h1 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; color: #555; }
+
+        .content-container { max-width: 800px; margin: 2rem auto; padding: 0 20px; }
+        
+        .photo-container { text-align: center; margin-bottom: 2rem; }
+        .photo-container img { max-width: 250px; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.2s; }
+        .photo-container img:hover { transform: scale(1.02); }
+        .photo-hint { font-size: 0.85rem; color: #888; margin-top: 10px; }
+
+        .section-block { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 2rem; border-left: 5px solid var(--primary-color); }
+        .section-block h2 { color: var(--secondary-color); margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        
+        ul.pub-list { list-style-type: square; margin-left: 20px; }
+        ul.pub-list li { margin-bottom: 10px; }
+
+        footer { text-align: center; padding: 20px; color: #777; font-size: 0.9rem; margin-top: 2rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="back-link" id="nav_back">← 返回主页 / Back to Home</a>
+            <button id="lang-toggle">EN / 中文</button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1 id="hero_name">加载中...</h1>
+        <p id="hero_dates"></p>
+        <p style="margin-top: 10px; font-weight: bold;" id="hero_title"></p>
+    </header>
+
+    <main class="content-container">
+        <div class="photo-container">
+            <img id="scholar_photo" src="" alt="Scholar Photo" onclick="nextPhoto()">
+            <p class="photo-hint" id="photo_hint">点击图片切换照片 / Click image to switch</p>
+        </div>
+
+        <div class="section-block">
+            <h2 id="sec_bio_title">生平简介</h2>
+            <p id="sec_bio_content"></p>
+        </div>
+
+        <div class="section-block">
+            <h2 id="sec_logic_title">学术贡献</h2>
+            <p id="sec_logic_content"></p>
+        </div>
+
+        <div class="section-block">
+            <h2 id="sec_pub_title">主要著作与发表</h2>
+            <ul class="pub-list" id="pub_list"></ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Project on Early Chinese Logicians & Modal Logic.</p>
+    </footer>
+
+    <script>
+        const scholarsData = {
+            "shen-yuting": {
+                images: [
+        "portraits/shen-yuting/shen1.jpg", 
+        "portraits/shen-yuting/shen2.png"
+    ], 
+                zh: {
+                    name: "沈有鼎 (Shen Yuting)", dates: "1908 – 1989", title: "逻辑学家、哲学家",
+                    bio_title: "生平简介", bio_content: "沈有鼎是中国现代著名的逻辑学家。他早年赴哈佛大学留学，深受当时国际顶级逻辑学和哲学思潮的影响。在结束哈佛的学业后，他远赴德国跟随现象学大师胡塞尔学习现象学，这段跨越分析哲学与大陆哲学的求学经历极大地塑造了他的学术视野。他晚年依然笔耕不辍，留下了大量关于模态逻辑的珍贵手稿。",
+                    logic_title: "模态逻辑与语义学贡献", logic_content: "沈有鼎在模态逻辑的公理化方面做出了奠基性的工作。在哈佛留学期间，他对德国逻辑学家 Oskar Becker 的工作进行了关键性修正。Becker 曾提出对 C.I. Lewis 的系统添加公理 4, B, 5，但错误地认为添加 4 和 B 会导致一个介于 S4 和 S5 之间的系统。沈有鼎敏锐地指出了这一谬误（S4 + B = S5），这一修正对模态逻辑 S4 和 S5 系统的确立及其语义学的发展具有不可磨灭的意义。",
+                    pub_title: "主要著作与发表", pubs: ["《论表达式》 - 结合现象学与逻辑学的早期重要工作。", "关于 S4/S5 系统的修正手稿与相关逻辑学论文。", "晚年关于模态逻辑的未刊手稿。"]
+                },
+                en: {
+                    name: "Shen Yuting", dates: "1908 – 1989", title: "Logician, Philosopher",
+                    bio_title: "Biography", bio_content: "Shen Yuting was a prominent modern Chinese logician. He studied at Harvard, where he was deeply influenced by international logical and philosophical currents. Following his time at Harvard, he studied phenomenology under Edmund Husserl in Germany. This unique trajectory profoundly shaped his academic vision.",
+                    logic_title: "Contributions to Modal Logic and Semantics", logic_content: "During his time at Harvard, Shen made a critical correction to the work of Oskar Becker. Becker had proposed adding axioms 4, B, and 5 to C.I. Lewis's system, but mistakenly believed adding 4 and B would result in a system strictly between S4 and S5. Shen pointed out this error (S4 + B = S5), a correction of monumental importance for the formulation of S4 and S5.",
+                    pub_title: "Selected Works", pubs: ["'On Expressions' - An early work bridging phenomenology and logic.", "Manuscripts regarding the correction of S4/S5 systems.", "Late-life unpublished manuscripts on modal logic."]
+                }
+            },
+            "shen-youqian": {
+                images: [
+        "portraits/shen-youqian/eugene1.jpg", 
+        "portraits/shen-youqian/eugene2.jpg", 
+        
+    ],
+                zh: {
+                    name: "沈有乾 (Eugene Shen)", dates: "1900 – 1953", title: "逻辑学家、心理学家",
+                    bio_title: "生平简介", bio_content: "沈有乾（Eugene Shen）是中国极早接触并研究现代代数逻辑的学者。作为心理学和逻辑学的跨界学者，他在20世纪20年代末深入研究了当时国际前沿的逻辑学理论，并积极参与了国际学术界的探讨。",
+                    logic_title: "对 Ladd-Franklin 的捍卫与模态逻辑溯源", logic_content: "沈有乾的突出贡献在于1927年对 Christine Ladd-Franklin “反三段论”逻辑系统的系统性捍卫。当代学者 Roy Cook 认为 Ladd-Franklin 是现代模态逻辑的真正开创者。沈有乾在对 Ladd-Franklin 的辩护中，实际上已经接触到了从皮尔士到 C.I. Lewis 过渡时期最核心的现代模态逻辑理念。",
+                    pub_title: "主要著作与发表", pubs: ["1927年关于捍卫 Ladd-Franklin 反三段论的英文学术论文。", "早期探索逻辑代数与心理学交叉领域的文献。"]
+                },
+                en: {
+                    name: "Eugene Shen (Shen Youqian)", dates: "1900 – 1953", title: "Logician, Psychologist",
+                    bio_title: "Biography", bio_content: "Eugene Shen was one of the earliest Chinese scholars to encounter modern algebraic logic. As an interdisciplinary scholar in psychology and logic, he deeply engaged with international logical theories in the late 1920s.",
+                    logic_title: "Defense of Ladd-Franklin and Roots of Modal Logic", logic_content: "A standout contribution was his systematic defense in 1927 of Christine Ladd-Franklin's 'antilogism'. Contemporary scholar Roy Cook argues LF is the true pioneer of modern modal logic. In his defense, Shen effectively engaged with the core concepts of modern modal logic during the critical transition from C.S. Peirce to C.I. Lewis.",
+                    pub_title: "Selected Works", pubs: ["1927 English academic paper defending Ladd-Franklin's antilogism.", "Early literature exploring the intersection of the algebra of logic and psychology."]
+                }
+            },
+            "tang-zaozhen": {
+                images: [
+        "portraits/tang-zaozhen/tang1.jpg", 
+        "portraits/tang-zaozhen/tang2.jpg"
+    ],
+                zh: {
+                    name: "汤藻真 (Tang Tsao-Chen)", dates: "1898 – 1951", title: "数学家、逻辑学家",
+                    bio_title: "生平简介", bio_content: "汤藻真是中国早期的杰出数学家。他早年与毛泽东是同窗挚友。建国后不久，汤藻真不幸早逝，其夫人曾请求毛泽东给予家庭照顾，这段历史为他的学术生涯增添了深厚的时代印记。",
+                    logic_title: "拓扑语义的先驱与严格蕴涵悖论", logic_content: "汤藻真在模态逻辑语义学上做出了超前的贡献。著名拓扑逻辑学者 Nick Bezhanishvili 确认，早在1936-1937年间，汤藻真就已经为系统 S2 建立了一套严密的拓扑/代数语义，早于1944年 McKinsey 和 Tarski 的经典文章。此外，他对 C.I. Lewis 严格蕴涵悖论的研究也具有极高的前瞻性。",
+                    pub_title: "主要著作与发表", pubs: ["1936-1937年间关于 S2 系统拓扑/代数语义的先驱性论文。", "关于严格蕴涵悖论的数学/逻辑学分析。"]
+                },
+                en: {
+                    name: "Tang Tsao-Chen (Tang Zaozhen)", dates: "1898 – 1951", title: "Mathematician, Logician",
+                    bio_title: "Biography", bio_content: "Tang Tsao-Chen was a distinguished early Chinese mathematician. Notably, he was a classmate and close friend of Mao Zedong in his early years. Passing away shortly after the founding of the PRC, his widow reached out to Mao for support—a historical detail that adds profound depth to his life story.",
+                    logic_title: "Pioneer of Topological Semantics", logic_content: "Tang made incredibly advanced contributions to the semantics of modal logic. Prominent researcher Nick Bezhanishvili has confirmed that Tang had already established a rigorous topological/algebraic semantics for System S2 between 1936 and 1937, pre-dating McKinsey and Tarski. Furthermore, his research on the paradoxes of strict implication was highly forward-looking.",
+                    pub_title: "Selected Works", pubs: ["Pioneering papers (1936-1937) establishing topological/algebraic semantics for the S2 system.", "Mathematical analyses of the paradoxes of strict implication."]
+                }
+            },
+            "jin-yuelin": {
+                images: [
+        "portraits/jin-yuelin/jin1.jpg", 
+        "portraits/jin-yuelin/jin2.jpg"
+    ],
+                zh: {
+                    name: "金岳霖 (Jin Yuelin)", dates: "1895 – 1984", title: "哲学家、逻辑学家",
+                    bio_title: "生平简介", bio_content: "金岳霖是中国现代哲学的奠基人之一，清华大学哲学系的创办者。他将西方分析哲学系统地引入中国，培养了包括沈有鼎在内的一大批杰出学者，是中国早期逻辑学研究的绝对核心与学术枢纽。",
+                    logic_title: "模态逻辑的引介与学术网络枢纽", logic_content: "虽然金岳霖先生并非数学科班出身，但他对模态逻辑在中国的传播起到了不可替代的桥梁作用。在他的经典著作《逻辑》一书中，他专门提及并引介了 Ladd-Franklin 以及沈有乾的工作。通过他的普及与串联，模态逻辑的早期火种得以在中国学术圈生根发芽。",
+                    pub_title: "主要著作与发表", pubs: ["《逻辑》 - 中国现代逻辑学教育的奠基之作，书中引介了LF与沈有乾的工作。", "《知识论》 - 中国本土构建的最庞大、最严密的认识论体系。", "《论道》 - 结合西方逻辑分析方法与中国传统哲学的著作。"]
+                },
+                en: {
+                    name: "Jin Yuelin", dates: "1895 – 1984", title: "Philosopher, Logician",
+                    bio_title: "Biography", bio_content: "Jin Yuelin was one of the founders of modern Chinese philosophy and the founder of the Philosophy Department at Tsinghua University. He mentored a generation of outstanding scholars, including Shen Yuting, acting as the absolute core of early Chinese logic research.",
+                    logic_title: "Transmission of Modal Logic and Academic Hub", logic_content: "Although Jin was not trained as a mathematician, he played an irreplaceable bridging role in the spread of modal logic in China. In his seminal textbook 'Logic', he explicitly mentioned and introduced the work of Christine Ladd-Franklin and Eugene Shen, allowing the early sparks of modal logic to take root.",
+                    pub_title: "Selected Works", pubs: ["'Logic' (逻辑) - The foundational textbook for modern logic education in China.", "'Knowledge Theory' (知识论) - A massive and rigorous epistemological system.", "'On the Tao' (论道) - Combining Western logical analysis with traditional Chinese philosophy."]
+                }
+            },
+            "ladd-franklin": {
+                images: ["portraits/ladd-franklin/clf1.jpg", 
+        "portraits/ladd-franklin/clf2.jpg",],
+                zh: {
+                    name: "克里斯蒂娜·拉德-弗兰克林 (C. Ladd-Franklin)", dates: "1847 – 1930", title: "逻辑学家、数学家",
+                    bio_title: "生平简介", bio_content: "拉德-弗兰克林在约翰斯·霍普金斯大学师从著名逻辑学家查尔斯·S·皮尔士（Charles S. Peirce）。她在1882年就完成了博士学位的所有要求，但因女性身份被拒授学位，直到1926年（78岁高龄）才获得迟到44年的博士学位。",
+                    logic_title: "反三段论 (Antilogism) 与模态逻辑先声", logic_content: "她提出了一套代数逻辑系统，即“反三段论”，将传统有效三段论还原为一个极优雅的对称形式。Roy Cook 等学者认为，这套系统给出了一个接近现代模态逻辑系统 D 的框架，使她成为现代模态逻辑的真正开创者之一。中国早期学者沈有乾对该系统进行了深入研究与捍卫。此外，她还提出了基于进化论的色彩视觉理论。",
+                    pub_title: "主要著作与发表", pubs: ["《论逻辑代数》 (1883) - 收录于皮尔士主编的《逻辑研究》，确立反三段论。","《色彩与色彩理论》 (1929) - 视觉心理学领域的长期研究成果。"]
+                },
+                en: {
+                    name: "Christine Ladd-Franklin", dates: "1847 – 1930", title: "Logician, Mathematician",
+                    bio_title: "Biography", bio_content: "Ladd-Franklin studied under the eminent logician Charles S. Peirce at Johns Hopkins University. She completed all requirements for her Ph.D. in 1882 but was refused the degree because she was a woman. It was not until 1926, at age 78, that she was officially awarded her Ph.D.",
+                    logic_title: "The Antilogism and Precursors to Modal Logic", logic_content: "She discovered the 'Antilogism', reducing all valid syllogisms to a single symmetrical formula. Scholars like Roy Cook argue this framework, resembling System D, marks her as a true pioneer of modern modal logic. Her system was notably defended by early Chinese logician Eugene Shen. She also proposed an influential Evolutionary Theory of Color Vision.",
+                    pub_title: "Selected Works", pubs: ["'On the Algebra of Logic' (1883) - Published in Studies in Logic, edited by C.S. Peirce.", "Colour and Colour Theories (1929) - A compilation of visual psychology research."]
+                }
+            }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const currentScholar = urlParams.get('id') || 'shen-yuting'; 
+
+        let currentLang = 'zh';
+        let currentPhotoIndex = 0;
+        const scholar = scholarsData[currentScholar] || scholarsData['shen-yuting'];
+
+        function renderContent() {
+            const data = scholar[currentLang];
+            document.getElementById('hero_name').textContent = data.name;
+            document.getElementById('hero_dates').textContent = data.dates;
+            document.getElementById('hero_title').textContent = data.title;
+            
+            document.getElementById('sec_bio_title').textContent = data.bio_title;
+            document.getElementById('sec_bio_content').textContent = data.bio_content;
+            
+            document.getElementById('sec_logic_title').textContent = data.logic_title;
+            document.getElementById('sec_logic_content').textContent = data.logic_content;
+            
+            document.getElementById('sec_pub_title').textContent = data.pub_title;
+            
+            const pubList = document.getElementById('pub_list');
+            pubList.innerHTML = '';
+            data.pubs.forEach(pub => {
+                const li = document.createElement('li');
+                li.textContent = pub;
+                pubList.appendChild(li);
+            });
+
+            document.getElementById('nav_back').textContent = currentLang === 'zh' ? '← 返回主页' : '← Back to Home';
+            document.getElementById('photo_hint').textContent = currentLang === 'zh' ? '点击图片切换照片' : 'Click image to switch';
+            
+            if(scholar.images && scholar.images.length > 0) {
+                document.getElementById('scholar_photo').src = scholar.images[currentPhotoIndex];
+            } else {
+                document.getElementById('scholar_photo').style.display = 'none';
+                document.getElementById('photo_hint').style.display = 'none';
+            }
+        }
+
+        function nextPhoto() {
+            if(scholar.images && scholar.images.length > 1) {
+                currentPhotoIndex = (currentPhotoIndex + 1) % scholar.images.length;
+                document.getElementById('scholar_photo').src = scholar.images[currentPhotoIndex];
+            }
+        }
+
+        document.getElementById('lang-toggle').addEventListener('click', () => {
+            currentLang = currentLang === 'zh' ? 'en' : 'zh';
+            renderContent();
+        });
+
+        window.onload = renderContent;
+    </script>
+</body>
+</html>

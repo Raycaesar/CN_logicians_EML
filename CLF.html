@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christine Ladd-Franklin | 逻辑学家介绍</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #16a085;
+            --bg-color: #f9fbfd;
+            --text-color: #333;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text-color); background: var(--bg-color); }
+        
+        /* 导航栏与主页样式保持一致 */
+        nav { background: var(--primary-color); color: white; padding: 1rem 0; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: auto; padding: 0 20px; }
+        .back-link { color: white; text-decoration: none; font-weight: bold; border-bottom: 1px solid transparent; transition: 0.3s; }
+        .back-link:hover { border-bottom: 1px solid white; }
+        #lang-toggle { background: transparent; border: 1px solid white; color: white; padding: 5px 10px; cursor: pointer; border-radius: 4px; }
+        #lang-toggle:hover { background: white; color: var(--primary-color); }
+
+        /* 头部信息 */
+        .hero { background: #e8f1f5; padding: 3rem 20px; text-align: center; border-bottom: 3px solid var(--secondary-color); }
+        .hero h1 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; color: #555; }
+
+        /* 内容区 */
+        .content-container { max-width: 800px; margin: 2rem auto; padding: 0 20px; }
+        .section-block { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 2rem; border-left: 5px solid var(--primary-color); }
+        .section-block h2 { color: var(--secondary-color); margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        
+        ul.pub-list { list-style-type: square; margin-left: 20px; }
+        ul.pub-list li { margin-bottom: 10px; }
+
+        footer { text-align: center; padding: 20px; color: #777; font-size: 0.9rem; margin-top: 2rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="back-link" data-i18n="nav_back">← 返回主页 / Back to Home</a>
+            <button id="lang-toggle">EN / 中文</button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1 data-i18n="hero_name">克里斯蒂娜·拉德-弗兰克林</h1>
+        <p>Christine Ladd-Franklin (1847 – 1930)</p>
+        <p style="margin-top: 10px; font-weight: bold;" data-i18n="hero_title">逻辑学家、数学家、心理学家</p>
+    </header>
+
+    <main class="content-container">
+        
+        <div class="section-block">
+            <h2 data-i18n="sec_bio_title">生平简介</h2>
+            <p data-i18n="sec_bio_content">拉德-弗兰克林早年毕业于瓦萨学院（Vassar College），随后在约翰斯·霍普金斯大学师从著名逻辑学家查尔斯·桑德斯·皮尔士（Charles S. Peirce）。她在1882年就凭借其卓越的逻辑学论文化解了传统的亚里士多德三段论，完成了博士学位的所有要求。然而，仅仅因为她是女性，当时的高等学府拒绝授予她博士学位。直到1926年，在她78岁高龄时，约翰斯·霍普金斯大学才在校友的努力下正式为她颁发了迟到44年的博士学位。</p>
+        </div>
+
+        <div class="section-block">
+            <h2 data-i18n="sec_logic_title">核心逻辑学贡献：反三段论 (Antilogism)</h2>
+            <p data-i18n="sec_logic_content1">拉德-弗兰克林在逻辑学史上最著名的贡献是她提出的一套代数逻辑系统，特别是“反三段论”（也称不一致的三元组）。传统的亚里士多德三段论包含复杂的格与式，而拉德-弗兰克林发现，所有有效的三段论都可以被还原为一个极其优雅的对称形式。这一工作极大地推进了19世纪末的代数逻辑发展。</p>
+            <br>
+            <p data-i18n="sec_logic_content2">她的逻辑学工作直接影响了后来的学者。值得注意的是，中国早期逻辑学家沈有乾（Eugene Shen）在1920年代对其反三段论系统进行了深入的研究与捍卫。我们的研究团队正在探索这套系统在多大程度上触及了现代模态逻辑（例如系统 D）的早期雏形。</p>
+        </div>
+
+        <div class="section-block">
+            <h2 data-i18n="sec_other_title">跨学科研究：色彩视觉理论</h2>
+            <p data-i18n="sec_other_content">除了逻辑学，拉德-弗兰克林还在心理学和视觉科学领域做出了开创性贡献。她提出了一种基于进化论的色彩视觉理论（Evolutionary Theory of Color Vision），试图调和当时亥姆霍兹（Helmholtz）和黑林（Hering）之间关于人类如何感知色彩的激烈争论。这一理论在当时的科学界产生了广泛影响。</p>
+        </div>
+
+        <div class="section-block">
+            <h2 data-i18n="sec_pub_title">主要发表情况</h2>
+            <ul class="pub-list">
+                <li data-i18n="pub_1"><strong>《论逻辑代数》 (On the Algebra of Logic, 1883)</strong> - 收录于皮尔士主编的《逻辑研究》 (Studies in Logic)。这是她确立反三段论的奠基之作。</li>
+                <li data-i18n="pub_2"><strong>《色彩与色彩理论》 (Colour and Colour Theories, 1929)</strong> - 汇集了她在视觉心理学领域的长期研究成果。</li>
+                <li data-i18n="pub_3">多篇发表于 <em>Mind</em> 和 <em>The Journal of Philosophy, Psychology and Scientific Methods</em> 等顶级学术期刊上的关于逻辑基础和认识论的文章。</li>
+            </ul>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Project on Early Chinese Logicians & Modal Logic. </p>
+    </footer>
+
+    <script>
+        const translations = {
+            zh: {
+                nav_back: "← 返回主页", hero_name: "克里斯蒂娜·拉德-弗兰克林", hero_title: "逻辑学家、数学家、心理学家",
+                sec_bio_title: "生平简介", 
+                sec_bio_content: "拉德-弗兰克林早年毕业于瓦萨学院（Vassar College），随后在约翰斯·霍普金斯大学师从著名逻辑学家查尔斯·桑德斯·皮尔士（Charles S. Peirce）。她在1882年就凭借其卓越的逻辑学论文化解了传统的亚里士多德三段论，完成了博士学位的所有要求。然而，仅仅因为她是女性，当时的高等学府拒绝授予她博士学位。直到1926年，在她78岁高龄时，约翰斯·霍普金斯大学才在校友的努力下正式为她颁发了迟到44年的博士学位。",
+                sec_logic_title: "核心逻辑学贡献：反三段论 (Antilogism)", 
+                sec_logic_content1: "拉德-弗兰克林在逻辑学史上最著名的贡献是她提出的一套代数逻辑系统，特别是“反三段论”（也称不一致的三元组）。传统的亚里士多德三段论包含复杂的格与式，而拉德-弗兰克林发现，所有有效的三段论都可以被还原为一个极其优雅的对称形式。这一工作极大地推进了19世纪末的代数逻辑发展。",
+                sec_logic_content2: "她的逻辑学工作直接影响了后来的学者。值得注意的是，中国早期逻辑学家沈有乾（Eugene Shen）在1920年代对其反三段论系统进行了深入的研究与捍卫。我们的研究团队正在探索这套系统在多大程度上触及了现代模态逻辑的早期雏形。",
+                sec_other_title: "跨学科研究：色彩视觉理论", 
+                sec_other_content: "除了逻辑学，拉德-弗兰克林还在心理学和视觉科学领域做出了开创性贡献。她提出了一种基于进化论的色彩视觉理论（Evolutionary Theory of Color Vision），试图调和当时亥姆霍兹（Helmholtz）和黑林（Hering）之间关于人类如何感知色彩的激烈争论。这一理论在当时的科学界产生了广泛影响。",
+                sec_pub_title: "主要发表情况", 
+                pub_1: "<strong>《论逻辑代数》 (On the Algebra of Logic, 1883)</strong> - 收录于皮尔士主编的《逻辑研究》 (Studies in Logic)。这是她确立反三段论的奠基之作。",
+                pub_2: "<strong>《色彩与色彩理论》 (Colour and Colour Theories, 1929)</strong> - 汇集了她在视觉心理学领域的长期研究成果。",
+                pub_3: "多篇发表于 <em>Mind</em> 和 <em>The Journal of Philosophy, Psychology and Scientific Methods</em> 等顶级学术期刊上的关于逻辑基础和认识论的文章。"
+            },
+            en: {
+                nav_back: "← Back to Home", hero_name: "Christine Ladd-Franklin", hero_title: "Logician, Mathematician, Psychologist",
+                sec_bio_title: "Biography", 
+                sec_bio_content: "Ladd-Franklin graduated from Vassar College and subsequently studied under the eminent logician Charles S. Peirce at Johns Hopkins University. She completed all requirements for her Ph.D. in 1882 with a brilliant dissertation on the algebra of logic. However, because she was a woman, the university refused to grant her the degree. It was not until 1926, when she was 78 years old, that Johns Hopkins officially awarded her the Ph.D. she had earned 44 years earlier.",
+                sec_logic_title: "Core Logical Contribution: The Antilogism", 
+                sec_logic_content1: "Ladd-Franklin's most famous contribution to the history of logic is her algebraic logic system, specifically the 'Antilogism' (or the inconsistent triad). While traditional Aristotelian syllogistic logic involved complex figures and moods, Ladd-Franklin discovered that all valid syllogisms could be reduced to a single, highly elegant symmetrical formula, profoundly advancing algebraic logic in the late 19th century.",
+                sec_logic_content2: "Her work had a direct impact on later scholars. Notably, the early Chinese logician Eugene Shen (Shen Youqian) deeply studied and defended her Antilogism system in the 1920s. Our research team is currently exploring the extent to which this system touched upon the early precursors of modern modal logic.",
+                sec_other_title: "Interdisciplinary Work: Color Vision Theory", 
+                sec_other_content: "Beyond logic, Ladd-Franklin made groundbreaking contributions to psychology and vision science. She proposed an Evolutionary Theory of Color Vision, attempting to reconcile the fierce debate between Helmholtz and Hering regarding how humans perceive color. This theory was highly influential in the scientific community of her time.",
+                sec_pub_title: "Key Publications", 
+                pub_1: "<strong>'On the Algebra of Logic' (1883)</strong> - Published in <em>Studies in Logic</em>, edited by C.S. Peirce. This is her foundational work establishing the Antilogism.",
+                pub_2: "<strong><em>Colour and Colour Theories</em> (1929)</strong> - A compilation of her long-term research in visual psychology.",
+                pub_3: "Numerous papers on the foundations of logic and epistemology published in top academic journals such as <em>Mind</em> and <em>The Journal of Philosophy, Psychology and Scientific Methods</em>."
+            }
+        };
+
+        let currentLang = 'zh';
+
+        document.getElementById('lang-toggle').addEventListener('click', () => {
+            currentLang = currentLang === 'zh' ? 'en' : 'zh';
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key]; // 用 innerHTML 以支持文本中的加粗标签
+                }
+            });
+        });
+    </script>
+</body>
+</html>
