@@ -61,7 +61,7 @@
         
         <button class="accordion" data-i18n="acc_1">1. Lewis 的严格蕴涵系统 (System B)</button>
         <div class="panel">
-            <p data-i18n="p_1_1">现代模态逻辑的滥觞，源于对经典逻辑中“实质蕴涵悖论”（如：假命题蕴涵任何命题）的不满。为了精准捕捉“必然的逻辑推演”这一直觉，C.I. Lewis 与 C.H. Langford  1932 年合著的 <a href="#ref-lewis-1932" class="ref-link"><em>Symbolic Logic</em></a> 第六章中，确立了<strong>系统 B </strong>，这也是日后为人熟知的 S1 至 S5 系统的基石。</p>
+            <p data-i18n="p_1_1">现代模态逻辑的早期发展，很大部分源于对经典逻辑中“实质蕴涵悖论”的不满。为了精准捕捉“必然的逻辑推演”这一直觉，C.I. Lewis 与 C.H. Langford  1932 年合著的 <a href="#ref-lewis-1932" class="ref-link"><em>Symbolic Logic</em></a> 第六章中，确立了<strong>系统 B </strong>，这也是日后为人熟知的 S1 至 S5 系统的基石。</p>
             <div style="background:#f8f9fa; padding:20px; border-left:4px solid #34495e; font-size:1.05em; overflow-x:auto; margin-bottom:15px; border-radius: 4px;" data-i18n="p_1_logic_box">
                 <p><strong>形式语言与算子：</strong></p>
                 <ul style="margin-left: 20px; margin-bottom: 10px;">
@@ -87,7 +87,7 @@
                 <p><strong>四条推理规则 (Rules of Inference)：</strong></p>
                 <ol style="margin-left: 20px;">
                     <li><strong>代入规则 (Substitution):</strong> 允许用任意公式一致地替换定理中的命题变元。</li>
-                    <li><strong>附加规则 (Adjunction):</strong> 若 $\vdash \alpha$ 且 $\vdash \beta$，则 $\vdash \alpha \cdot \beta$。（即已证定理的合取仍是定理）。</li>
+                    <li><strong>随伴规则 (Adjunction):</strong> 若 $\vdash \alpha$ 且 $\vdash \beta$，则 $\vdash \alpha \cdot \beta$。（即已证定理的合取仍是定理）。</li>
                     <li><strong>分离规则 (Modus Ponens):</strong> 若 $\vdash \alpha$ 且 $\vdash \alpha \prec \beta$，则 $\vdash \beta$。</li>
                     <li><strong>严格等价替换 (Strict Equivalence Replacement):</strong> 若 $\vdash \alpha = \beta$，且 $\phi(\alpha)$ 是包含 $\alpha$ 的公式，则 $\vdash \phi(\alpha) = \phi(\beta)$。在缺乏演绎定理的早期系统中，这一规则对于深层语法归约至关重要。</li>
                 </ol>
@@ -96,39 +96,39 @@
 
         <button class="accordion" data-i18n="acc_2">2. 系统的起源：从“模态坍塌”到系统 A 与 B 的分立</button>
         <div class="panel">
-            <p data-i18n="p_2_1">要理解系统 B 的出现，必须追溯到 Lewis 对严格蕴涵的首次系统性探索，即其 1918 年的独立专著《符号逻辑概览》(<a href="#ref-lewis-1918" class="ref-link"><em>A Survey of Symbolic Logic</em></a>) 中。在该书的原始演算里，Lewis 将 $(p \prec q) = (\sim q \prec \sim p)$ 作为一条基本公理。</p>
-            <p data-i18n="p_2_2">然而，美国著名数学家 Emil L. Post 在审视该系统时，敏锐地指出了一个致命缺陷：该公设会导致灾难性的“模态坍塌” (Modal Collapse)。Post 证明，以此为基础可以推导出 $p \prec q = p \supset q$（即严格蕴涵等同于实质蕴涵），这意味着系统中所有的模态词都可以被消除，彻底动摇了区分严格/实质蕴涵的哲学初衷。</p>
+            <p data-i18n="p_2_1">要理解系统 B 的出现，必须追溯到 Lewis 对严格蕴涵的首次系统性探索，即其 1918 年的独立专著《符号逻辑概览》(<a href="#ref-lewis-1918" class="ref-link"><em>A Survey of Symbolic Logic</em></a>) 中。在该书的原始演算里，Lewis 将 $(p \prec q) = (\sim q \prec \sim p)$ 作为一条基本公理。 (第一本书的 $\sim$ 意思是不可能)</p>
+            <p data-i18n="p_2_2">然而，Emil L. Post 在审视该系统时，敏锐地指出了一个致命缺陷：该公设会导致灾难性的“模态坍塌” (Modal Collapse)。Post 证明，以此为基础可以推导出 $p \prec q = p \supset q$（即严格蕴涵等同于实质蕴涵），这意味着系统中所有的模态词都可以被消除，彻底动摇了区分严格/实质蕴涵的哲学初衷。</p>
             <p data-i18n="p_2_3">为了挽救系统，Lewis 在随后的修订中去除了该公理中导致坍塌的一个蕴涵方向。这个经过削弱的 1918 版修订系统，在 1932 年的 <em>Symbolic Logic</em> 中被归档并命名为<strong>系统 A (System A)</strong>。而为了提供一个更稳固的底座，Lewis 和 Langford 在该书的第六章提出了一个平行且重新公理化的全新系统——<strong>系统 B (System B)</strong>。</p>
-            <p data-i18n="p_2_4">虽然系统 B 成功避免了坍塌，当时的学者们对它的性质依然在黑暗中摸索（例如，直到 1934 年 J.C.C. McKinsey 才证明了公理 B5 在特定扩展系统中实际上是多余的）。更紧迫的是，系统 B 暴露出一个巨大的结构性问题：它缺乏处理无限模态迭代（如 $\Box\Box p$）的还原法则。这为 Oskar Becker 的登场埋下了伏笔。</p>
+            <p data-i18n="p_2_4">虽然系统 B 成功避免了坍塌，当时的学者们对该系统的性质依然不清晰（例如，直到 1934 年 J.C.C. McKinsey 才证明了公理 B5 在特定扩展系统中实际上是多余的）。更紧迫的是，系统 B 有一个巨大的结构性问题：它缺乏处理无限模态迭代（如 $\Box p, \Box\Box p,...$）的归约法则。德国学者 Oskar Becker 就此发表了他的研究。</p>
         </div>
 
         <button class="accordion" data-i18n="acc_3">3. Oskar Becker 的现象学直观与“十模态演算”</button>
         <div class="panel">
-            <p data-i18n="p_3_1">Oskar Becker (1889–1964) 是德国著名数学家兼哲学家，现象学宗师胡塞尔 (Edmund Husserl) 最杰出的助手之一，并深受布劳威尔 (L.E.J. Brouwer) 直觉主义的影响。在 1930 年的划时代论文《模态逻辑》(<em>Zur Logik der Modalitäten</em>) 中，Becker 批评 Lewis 的系统留下了一个“敞口” (<em>eine offene Stelle</em>)——未能对模态算子的无穷迭代进行化约。</p>
+            <p data-i18n="p_3_1">Oskar Becker (1889–1964) 是德国著名数学家兼哲学家，胡塞尔 (Edmund Husserl) 的追随者，并深受布劳威尔 (L.E.J. Brouwer) 直觉主义的影响。在 1930 年的划时代论文《模态逻辑》(<em>Zur Logik der Modalitäten</em>) 中，Becker 批评 Lewis 的系统留下了一个“一个开放的位置” (<em>eine offene Stelle</em>)——未能对模态算子的无穷迭代进行归约。</p>
             <p data-i18n="p_3_2">Becker 绝非在玩弄形式符号，他赋予了模态公理深刻的哲学与现象学内涵。为了封闭系统，他提出了三条著名的归约公理：</p>
             <ul style="margin-left: 20px; margin-bottom: 15px; line-height: 1.6;" data-i18n="p_3_axioms">
-                <li><strong>公理 4 (C10):</strong> $\sim\Diamond\sim p \prec \sim\Diamond\sim\sim\Diamond\sim p$ （即 $\Box p \prec \Box\Box p$）。Becker 认为这反映了证明的自反本性：若 p 的证明状态为必然（已被证明），那么“p已被证明”这一事实本身，也是一个必然的真理。</li>
-                <li><strong>公理 B (C12):</strong> $p \prec \sim\Diamond\sim\Diamond p$ （即 $p \prec \Box\Diamond p$）。Becker 明确称其为“布劳威尔公理” (<em>Brouwersche Axiom</em>)，它捕捉了直觉主义的直觉：如果 p 是真实的（已被证明），那么它绝不可能被推翻，即它必然是可能的。</li>
-                <li><strong>公理 5 (C11):</strong> $\Diamond p \prec \sim\Diamond\sim\Diamond p$ （即 $\Diamond p \prec \Box\Diamond p$）。</li>
+                <li><strong>公理 4 (C10):</strong> $\sim\Diamond\sim p \prec \sim\Diamond\sim\sim\Diamond\sim p$。Becker 认为这反映了证明的自反本性：若 p 的证明状态为必然（已被证明），那么“p已被证明”这一事实本身，也是一个必然的真理。</li>
+                <li><strong>公理 B (C12):</strong> $p \prec \sim\Diamond\sim\Diamond p$。Becker 明确称其为“布劳威尔公理” (<em>Brouwersche Axiom</em>)，它捕捉了直觉主义的直觉：如果 p 是真实的（已被证明），那么它绝不可能被推翻，即它必然是可能的。</li>
+                <li><strong>公理 5 (C11):</strong> $\Diamond p \prec \sim\Diamond\sim\Diamond p$。</li>
             </ul>
-            <p data-i18n="p_3_3">Becker 正确地指出，加入公理 5 (C11) 会使系统归约为 6 个模态词（即我们熟知的 S5）。但他却<strong>错误地断言</strong>：如果同时加入公理 4 和公理 B，会产生一个结构完全不同的、拥有 10 个独立模态词的演算系统 —— <strong>十模态演算 (Zehn-Modalitäten-Kalkül)</strong>，并为此绘制了复杂的模态强度关系图。这一历史性的误判，正在等待一位中国学者的纠正。</p>
+            <p data-i18n="p_3_3">Becker 正确地指出，加入公理 5 (C11) 会使系统归约为 6 个模态词（即我们熟知的 S5）。但他却<strong>错误地断言</strong>：如果同时加入公理 4 和公理 B，会产生一个结构完全不同的、拥有 10 个独立模态词的演算系统 —— <strong>十模态演算 (Zehn-Modalitäten-Kalkül)</strong>，并为此绘制了复杂的模态强度关系图。这一误判后来由一位中国学者纠正。</p>
         </div>
 
         <button class="accordion" data-i18n="acc_4">4. 沈有鼎在哈佛的证明：语法归约的精髓</button>
         <div class="panel">
-            <p data-i18n="p_4_1">1929-1931年间，沈有鼎在哈佛大学师从 H.M. Sheffer 与 Lewis。他敏锐地察觉到了 Becker “十模态演算”的谬误，并在基础极为薄弱的系统 B 中给出了一套极其优雅的纯语法推演。</p>
+            <p data-i18n="p_4_1">1929-1931年间，沈有鼎在哈佛大学师从 H.M. Sheffer。他察觉到了 Becker “十模态演算”的谬误，并在基础极为薄弱的系统 B 中给出了一套严谨的纯语法推演。</p>
             
             <div style="background:#f4f6f7; padding:20px; border-radius:8px; border-left:4px solid #2ecc71; margin-bottom: 15px;">
                 <p data-i18n="p_4_2_intro">今天我们熟知，框架自反性的典范公式 ($ p \supset \Diamond p$) 在 Lewis 的系统中是可证的。但在当时的纯句法系统中，缺乏现代语义学视角的加持，要推导出这一点绝非易事。沈有鼎首先构建了以下基础：</p>
                 <div style="border: 1px solid #ccc; padding: 15px; background: white; margin-bottom: 20px;">
-                    <p><strong>预备推导：自反性定理的重建 (Key Steps)</strong></p>
+                    <p><strong>预备推导：自反性定理的重建 (prerequisite propositions)</strong></p>
                     <ol style="line-height: 1.8;">
                         <li>$ \sim p \prec q \ \cdot\prec\ \sim q \prec p \quad $ <i>(Prop. 12.2)</i></li>
                         <li>$ p = \sim(\sim p) \quad $ <i>(Prop. 12.3)</i></li>
                         <li>$ p \ \cdot\prec\ \Diamond p \quad $ <i>(Prop. 18.4)</i></li>
                         <li>$ p \prec \Diamond p \ \cdot\prec\ p \supset \Diamond p \quad $</li>
                     </ol>
-                    <p><small>注：命题编号遵循 <i>Symbolic Logic</i> (1932)。</small></p>
+                    <p><small>注：命题编号遵循 <i>《符号逻辑》</i> (We follow the same propositional index numbers in <i>Symbolic Logic</i>)。</small></p>
                 </div>
 
                 <h4 style="color:#27ae60; border-bottom: 2px solid #2ecc71; padding-bottom: 5px; margin-top: 30px;">沈有鼎核心推演：证明 System B + C10 + C12 ⊢ C11 (S5)</h4>
@@ -170,29 +170,30 @@
 
                 <div style="background:#d4efdf; padding:15px; border-left:4px solid #27ae60; margin-top: 30px;">
                     <strong style="font-size:1.1em; color:#1e8449;">5. 最终归约 (Final Reduction): $\Diamond p \prec \Box\Diamond p$ (Q.E.D.)</strong>
-                    <p style="margin-top:10px; line-height: 1.6;">观察步骤 4 得出的公式：$\Diamond p \prec \Box\Diamond\Diamond p$。<br>
-                    由于其包含了 $\Diamond\Diamond p$，根据步骤 3 建立的严格等价替换原则 ($\Diamond\Diamond p = \Diamond p$) 进行代换，直接得出结论：<br>
-                    <span style="font-size:1.3em; color:#145a32; font-weight:bold; display:block; margin-top:10px;">$\Diamond p \prec \Box\Diamond p$ &nbsp;&nbsp;&nbsp; (即 C11 / Axiom 5)</span></p>
-                    <p style="margin-top:10px; font-weight:bold; color:#c0392b;">至此证明：Becker 的“十模态演算”发生坍塌，系统被语法归约为 S5！</p>
+                    <p style="margin-top:10px; line-height: 1.6;">根据 4 得出的公式（By the formula derived in step 4.）：$\Diamond p \prec \Box\Diamond\Diamond p$。<br>
+                    由于其包含了 (Since the formula contains) $\Diamond\Diamond p$，根据步骤 3 建立的严格等价替换原则 (by the equivalence established in step 3: $\Diamond\Diamond p = \Diamond p$) 进行代换，直接得出结论 (we get the final result by substitution.)：<br>
+                    <span style="font-size:1.3em; color:#145a32; font-weight:bold; display:block; margin-top:10px;">$\Diamond p \prec \Box\Diamond p$ &nbsp;&nbsp;&nbsp; (C11 / Axiom 5)</span></p>
+                    <p style="margin-top:10px; font-weight:bold; color:#c0392b;">至此证明：Becker 的“十模态演算”蕴含 S5！(This means Becker's Ten-modality calculus implies S5.)</p>
                 </div>
             </div>
         </div>
 
         <button class="accordion" data-i18n="acc_5">5. Wajsberg, Parry 与模态逻辑层级的确立</button>
         <div class="panel">
-            <p data-i18n="p_5_1">沈有鼎对 S5 独立性问题的解决，标志着 1930 年代初期模态逻辑国际学术网络的一次伟大共振。在这一时期，另外两位青年学者同样做出了奠基性的贡献：</p>
+            <p data-i18n="p_5_1">除了沈有鼎，在这一时期，另外两位青年学者同样做出了奠基性的贡献：</p>
             <ul style="margin-left: 20px; margin-bottom: 15px; line-height: 1.6;">
-                <li data-i18n="p_5_wajsberg"><strong>Mordchaj Wajsberg (1902–1942):</strong> 波兰华沙逻辑学派的杰出代表，逻辑学大师卢卡西维茨 (Jan Łukasiewicz) 的学生。他在 1933 年独立给出了 S5 系统的一个形式化基础，并在多值逻辑和模态逻辑领域做出了开创性工作。令人痛心的是，这位天才逻辑学家在二战的犹太人大屠杀中不幸遇害。尽管如此，他基于代数化方法的推演与同时代哈佛学者的工作遥相呼应。</li>
-                <li data-i18n="p_5_parry"><strong>William T. Parry (1908–1988):</strong> 美国哲学家，哈佛大学 W.H.Whitehead 的学生，也是沈有鼎在哈佛深造期间的同窗挚友。Parry 敏锐地意识到，即便在 Lewis 的严格蕴涵系统中，仍存在类似“不可能命题严格蕴涵任何命题”的悖论。为此，他在 1933 年提出了著名的<strong>分析蕴涵 (Analytic Implication)</strong> 理论，要求蕴涵式的后件中的所有命题变元必须已经在前件中出现，开创了相关逻辑 (Relevance Logic) 的先河。</li>
+                <li data-i18n="p_5_wajsberg"><strong>Mordchaj Wajsberg (1902–1942):</strong> 波兰华沙逻辑学派的杰出代表，逻辑学大师卢卡西维茨 (Jan Łukasiewicz) 的学生。他在 1933 年独立给出了 S5 系统的一个形式化基础，并在多值逻辑和模态逻辑领域做出了开创性工作。遗憾的是，他在二战的犹太人大屠杀中不幸遇害。尽管如此，他与 Lewis 保持通信并分享他的成果。</li>
+                <li data-i18n="p_5_parry"><strong>William T. Parry (1908–1988):</strong> 美国哲学家，哈佛大学 W.H.Whitehead的学生，也是沈有鼎在哈佛深造期间的同窗挚友。Parry 敏锐地意识到，即便在 Lewis 的严格蕴涵系统中，仍存在类似“不可能命题严格蕴涵任何命题”的悖论。为此，他在 1933 年提出了著名的<strong>分析蕴涵 (Analytic Implication)</strong> 理论，要求蕴涵式的后件中的所有命题变元必须已经在前件中出现，开创了相关逻辑 (Relevance Logic) 的先河。</li>
             </ul>
-            <p data-i18n="p_5_2">在 <em>Symbolic Logic</em> (1932) 的附录二中，Lewis 极为罕见地并列致谢了沈有鼎 (Yuting Shen)、Parry 以及 Wajsberg。这不仅是一段学术佳话，更证明了在克里普克语义学 (Kripke Semantics) 诞生前的三十年，正是依靠这些先驱们在纯语法层面的艰苦推演与归约，才最终确立了今天为人熟知的 <strong>S1 至 S5 模态系统层级</strong>。</p>
+            <p data-i18n="p_5_2">在 <em>Symbolic Logic</em> (1932) 的附录二中，Lewis 记载了沈有鼎 (Yuting Shen)、Parry 以及 Wajsberg的工作。其中也包括S5蕴含S4+B的证明。通过他们的共同工作，Lewis确定了多个今天为人熟知的模态逻辑系统关系，并最终确定了 <strong>S1 至 S5 模态系统层级</strong>。</p>
         </div>
 
         <button class="accordion" data-i18n="acc_6">6. 历史意义：为代数/拓扑语义扫清障碍</button>
         <div class="panel">
             <p data-i18n="p_6_1">沈有鼎等人的工作，其最伟大的历史意义在于完成了纯语法 (Syntax) 层面的彻底清理，极大地解放了后来的语义学 (Semantics) 研究。</p>
-            <p data-i18n="p_6_2">试想，如果 Becker 的论断没有被沈有鼎的推演推翻，后来的数学家在寻找模态逻辑的数学模型时，将不得不去痛苦地构造一个对应所谓“十模态演算”的变态拓扑空间。沈有鼎明确指出 S4 + B 必然坍塌为 S5，这意味着未来的语义提供者只需聚焦于 S4 和 S5 极其明确的数学结构即可。</p>
-            <p data-i18n="p_6_3">后来 McKinsey 和 Tarski 提出了著名的拓扑代数语义：S4 的 $\Box$ 对应拓扑空间的“内部 (Interior)”，$\Diamond$ 对应“闭包 (Closure)”。虽然当时的数学家未必立刻意识到，一个 <em>dense-in-itself</em> (自身稠密) 的代数加上对应公理 B 的性质，会产生与加上公理 5 一模一样的代数结构，但这种数学深处的等价性，早在沈有鼎的几行语法符号代换中，就已经被宿命般地预言和证明了。</p>
+
+            <p data-i18n="p_6_2">试想，如果 Becker 的论断没有被沈有鼎的推演推翻，后来的数学家在寻找模态逻辑的数学模型时，将不得不去尝试构造一个对应所谓“十模态演算”的拓扑空间。沈有鼎明确指出 S4 + B 蕴含 S5，这意味着未来的语义提供者在给S4提供语义后，可以直接考虑 S5对应的数学结构即可。</p>
+            <p data-i18n="p_6_3">后来 McKinsey 和 Tarski 提出了著名的拓扑代数语义：S4 的 $\Box$ 对应拓扑空间的“内部 (Interior)”，$\Diamond$ 对应“闭包 (Closure)”。虽然当时的数学家未必立刻意识到，一个 <em>dense-in-itself</em> (自身稠密) 的代数加上对应公理 B 的性质，会产生与加上公理 5 一模一样的代数结构。</p>
      
             
             <div class="topo-container">
@@ -316,34 +317,35 @@
                 slides_title: "📊 AWPL 学术报告",
                 slides_desc: "本版块研究的基础内容已在 AWPL 上进行了汇报。您可以查看或下载当时的演示幻灯片：",
                 slides_link: "🔗 <strong>幻灯片链接：</strong> <a href='https://slides-6xr.pages.dev/Shen_yuting_awpl' target='_blank' style='color: #c0392b; font-weight: bold;'>Shen Yuting in Early Modal Logic (Slides)</a>",
-                p_5_1: "沈有鼎对 S5 独立性问题的解决，标志着 1930 年代初期模态逻辑国际学术网络的一次伟大共振。在这一时期，另外两位青年学者同样做出了奠基性的贡献：",
-                p_5_wajsberg: "<strong>Mordchaj Wajsberg (1902–1942):</strong> 波兰华沙逻辑学派的杰出代表，逻辑学大师卢卡西维茨 (Jan Łukasiewicz) 的学生。他在 1933 年独立给出了 S5 系统的一个形式化基础，并在多值逻辑和模态逻辑领域做出了开创性工作。令人痛心的是，这位天才逻辑学家在二战的犹太人大屠杀中不幸遇害。尽管如此，他基于代数化方法的推演与同时代哈佛学者的工作遥相呼应。",
-                p_5_parry: "<strong>William T. Parry (1908–1988):</strong> 美国哲学家，哈佛大学 W.H.Whitehead 的学生，也是沈有鼎在哈佛深造期间的同窗挚友。Parry 敏锐地意识到，即便在 Lewis 的严格蕴涵系统中，仍存在类似“不可能命题严格蕴涵任何命题”的悖论。为此，他在 1933 年提出了著名的<strong>分析蕴涵 (Analytic Implication)</strong> 理论，要求蕴涵式的后件中的所有命题变元必须已经在前件中出现，开创了相关逻辑 (Relevance Logic) 的先河。",
+                p_5_1: "除了沈有鼎，在这一时期，另外两位青年学者同样做出了奠基性的贡献：",
+                p_5_wajsberg: "<strong>Mordchaj Wajsberg (1902–1942):</strong> 波兰华沙逻辑学派的杰出代表，逻辑学大师卢卡西维茨 (Jan Łukasiewicz) 的学生。他在 1933 年独立给出了 S5 系统的一个形式化基础，并在多值逻辑和模态逻辑领域做出了开创性工作。遗憾的是，他在二战的犹太人大屠杀中不幸遇害。尽管如此，他与 Lewis 保持通信并分享他的成果。",
+                p_5_parry: "William T. Parry (1908–1988):</strong> 美国哲学家，哈佛大学 W.H.Whitehead的学生，也是沈有鼎在哈佛深造期间的同窗挚友。Parry 敏锐地意识到，即便在 Lewis 的严格蕴涵系统中，仍存在类似“不可能命题严格蕴涵任何命题”的悖论。为此，他在 1933 年提出了著名的<strong>分析蕴涵 (Analytic Implication)</strong> 理论，要求蕴涵式的后件中的所有命题变元必须已经在前件中出现，开创了相关逻辑 (Relevance Logic) 的先河。",
                 p_4_2_intro: "今天我们熟知，框架自反性的典范公式 ($ p \\supset \\Diamond p$) 在 Lewis 的系统中是可证的。但在当时的纯句法系统中，缺乏现代语义学视角的加持，要推导出这一点绝非易事。沈有鼎首先构建了以下基础：",
-                p_3_axioms: "<li><strong>公理 4 (C10):</strong> $\\sim\\Diamond\\sim p \\prec \\sim\\Diamond\\sim\\sim\\Diamond\\sim p$ （即 $\\Box p \\prec \\Box\\Box p$）。Becker 认为这反映了证明的自反本性：若 p 的证明状态为必然（已被证明），那么“p已被证明”这一事实本身，也是一个必然的真理。</li><li><strong>公理 B (C12):</strong> $p \\prec \\sim\\Diamond\\sim\\Diamond p$ （即 $p \\prec \\Box\\Diamond p$）。Becker 明确称其为“布劳威尔公理” (<em>Brouwersche Axiom</em>)，它捕捉了直觉主义的直觉：如果 p 是真实的（已被证明），那么它绝不可能被推翻，即它必然是可能的。</li><li><strong>公理 5 (C11):</strong> $\\Diamond p \\prec \\sim\\Diamond\\sim\\Diamond p$ （即 $\\Diamond p \\prec \\Box\\Diamond p$）。</li>",
-                p_1_logic_box: "<p><strong>形式语言与算子：</strong></p><ul style='margin-left: 20px; margin-bottom: 10px;'><li><strong>命题变元：</strong> $p, q, r, \\dots$</li><li><strong>基本联结词：</strong> 否定 $\\sim p$；逻辑积 $p \\cdot q$（常简写为 $pq$）。</li><li><strong>模态算子：</strong> 可能性 $\\Diamond p$（Lewis 称之为 self-consistent，即自洽的/可能的）。</li></ul><p><strong>核心定义：</strong></p><ul style='margin-left: 20px; margin-bottom: 10px;'><li><strong>严格蕴涵 (Strict Implication):</strong> $p \\prec q =_{def} \\sim\\Diamond(p \\cdot \\sim q)$ （不可能 $p$ 为真且 $q$ 为假）</li><li><strong>严格等价 (Strict Equivalence):</strong> $p = q =_{def} (p \\prec q) \\cdot (q \\prec p)$</li></ul><p><strong>7 条基础公理 (B1-B7)：</strong></p><ul style='list-style-type: none; padding-left: 0;'><li><strong>B1.</strong> $pq \\prec qp$ (交换律)</li><li><strong>B2.</strong> $pq \\prec p$ (析取化简)</li><li><strong>B3.</strong> $p \\prec pp$ (幂等律)</li><li><strong>B4.</strong> $(pq)r \\prec p(qr)$ (结合律)</li><li><strong>B5.</strong> $p \\prec \\sim(\\sim p)$ (双重否定)</li><li><strong>B6.</strong> $(p \\prec q) \\cdot (q \\prec r) \\prec (p \\prec r)$ (传递律)</li><li><strong>B7.</strong> $p \\cdot (p \\prec q) \\prec q$ (假言推理的内化)</li></ul><p><strong>四条推理规则 (Rules of Inference)：</strong></p><ol style='margin-left: 20px;'><li><strong>代入规则 (Substitution):</strong> 允许用任意公式一致地替换定理中的命题变元。</li><li><strong>附加规则 (Adjunction):</strong> 若 $\\vdash \\alpha$ 且 $\\vdash \\beta$，则 $\\vdash \\alpha \\cdot \\beta$。（即已证定理的合取仍是定理）。</li><li><strong>分离规则 (Modus Ponens):</strong> 若 $\\vdash \\alpha$ 且 $\\vdash \\alpha \\prec \\beta$，则 $\\vdash \\beta$。</li><li><strong>严格等价替换 (Strict Equivalence Replacement):</strong> 若 $\\vdash \\alpha = \\beta$，且 $\\phi(\\alpha)$ 是包含 $\\alpha$ 的公式，则 $\\vdash \\phi(\\alpha) = \\phi(\\beta)$。在缺乏演绎定理的早期系统中，这一规则对于深层语法归约至关重要。</li></ol>",
+                p_3_axioms: "<li><strong>公理 4 (C10):</strong> $\\sim\\Diamond\\sim p \\prec \\sim\\Diamond\\sim\\sim\\Diamond\\sim p$。Becker 认为这反映了证明的自反本性：若 p 的证明状态为必然（已被证明），那么“p已被证明”这一事实本身，也是一个必然的真理。</li><li><strong>公理 B (C12):</strong> $p \\prec \\sim\\Diamond\\sim\\Diamond p$。Becker 明确称其为“布劳威尔公理” (<em>Brouwersche Axiom</em>)，它捕捉了直觉主义的直觉：如果 p 是真实的（已被证明），那么它绝不可能被推翻，即它必然是可能的。</li><li><strong>公理 5 (C11):</strong> $\\Diamond p \\prec \\sim\\Diamond\\sim\\Diamond p$。</li>",
+                p_1_logic_box: "<p><strong>形式语言与算子：</strong></p><ul style='margin-left: 20px; margin-bottom: 10px;'><li><strong>命题变元：</strong> $p, q, r, \\dots$</li><li><strong>基本联结词：</strong> 否定 $\\sim p$；逻辑积 $p \\cdot q$（常简写为 $pq$）。</li><li><strong>模态算子：</strong> 可能性 $\\Diamond p$（Lewis 称之为 self-consistent，即自洽的/可能的）。</li></ul><p><strong>核心定义：</strong></p><ul style='margin-left: 20px; margin-bottom: 10px;'><li><strong>严格蕴涵 (Strict Implication):</strong> $p \\prec q =_{def} \\sim\\Diamond(p \\cdot \\sim q)$ （不可能 $p$ 为真且 $q$ 为假）</li><li><strong>严格等价 (Strict Equivalence):</strong> $p = q =_{def} (p \\prec q) \\cdot (q \\prec p)$</li></ul><p><strong>7 条基础公理 (B1-B7)：</strong></p><ul style='list-style-type: none; padding-left: 0;'><li><strong>B1.</strong> $pq \\prec qp$ (交换律)</li><li><strong>B2.</strong> $pq \\prec p$ (析取化简)</li><li><strong>B3.</strong> $p \\prec pp$ (幂等律)</li><li><strong>B4.</strong> $(pq)r \\prec p(qr)$ (结合律)</li><li><strong>B5.</strong> $p \\prec \\sim(\\sim p)$ (双重否定)</li><li><strong>B6.</strong> $(p \\prec q) \\cdot (q \\prec r) \\prec (p \\prec r)$ (传递律)</li><li><strong>B7.</strong> $p \\cdot (p \\prec q) \\prec q$ (假言推理的内化)</li></ul><p><strong>四条推理规则 (Rules of Inference)：</strong></p><ol style='margin-left: 20px;'><li><strong>代入规则 (Substitution):</strong> 允许用任意公式一致地替换定理中的命题变元。</li><li><strong>随伴规则 (Adjunction):</strong> 若 $\\vdash \\alpha$ 且 $\\vdash \\beta$，则 $\\vdash \\alpha \\cdot \\beta$。（即已证定理的合取仍是定理）。</li><li><strong>分离规则 (Modus Ponens):</strong> 若 $\\vdash \\alpha$ 且 $\\vdash \\alpha \\prec \\beta$，则 $\\vdash \\beta$。</li><li><strong>严格等价替换 (Strict Equivalence Replacement):</strong> 若 $\\vdash \\alpha = \\beta$，且 $\\phi(\\alpha)$ 是包含 $\\alpha$ 的公式，则 $\\vdash \\phi(\\alpha) = \\phi(\\beta)$。在缺乏演绎定理的早期系统中，这一规则对于深层语法归约至关重要。</li></ol>",
                 nav_home: "首页", nav_research: "研究计划", nav_forum: "讨论区",
                 page_title: "研究版块 II：沈有鼎与 S4/S5 的确立",
                 page_subtitle: "从模态坍塌到拓扑语义：早期严格蕴涵系统的演进与中国学者的贡献",
                 
                 acc_1: "1. Lewis 的严格蕴涵系统 (System B)",
                 p_1_1: "现代模态逻辑的滥觞，源于对经典逻辑中“实质蕴涵悖论”（如：假命题蕴涵任何命题）的不满。为了精准捕捉“必然的逻辑推演”这一直觉，C.I. Lewis 与 C.H. Langford 在 1932 年合著的里程碑著作 <a href='#ref-lewis-1932' class='ref-link'><em>Symbolic Logic</em></a> 第六章中，确立了<strong>系统 B (System B)</strong>，这也是日后为人熟知的 S1 至 S5 系统的基石。",
-                p_1_logic_box: "<p><strong>形式语言与算子：</strong></p><ul style='margin-left: 20px; margin-bottom: 10px;'><li><strong>命题变元：</strong> $p, q, r, \\dots$</li><li><strong>基本联结词：</strong> 否定 $\\sim p$；逻辑积 $p \\cdot q$（常简写为 $pq$）。</li><li><strong>模态算子：</strong> 可能性 $\\Diamond p$（Lewis 称之为 self-consistent，即自洽的/可能的）。</li></ul><p><strong>核心定义：</strong></p><ul style='margin-left: 20px; margin-bottom: 10px;'><li><strong>严格蕴涵 (Strict Implication):</strong> $p \\prec q =_{def} \\sim\\Diamond(p \\cdot \\sim q)$ （不可能 $p$ 为真且 $q$ 为假）</li><li><strong>严格等价 (Strict Equivalence):</strong> $p = q =_{def} (p \\prec q) \\cdot (q \\prec p)$</li></ul><p><strong>7 条基础公理 (B1-B7)：</strong></p><ul style='list-style-type: none; padding-left: 0;'><li><strong>B1.</strong> $pq \\prec qp$ (交换律)</li><li><strong>B2.</strong> $pq \\prec p$ (析取化简)</li><li><strong>B3.</strong> $p \\prec pp$ (幂等律)</li><li><strong>B4.</strong> $(pq)r \\prec p(qr)$ (结合律)</li><li><strong>B5.</strong> $p \\prec \\sim(\\sim p)$ (双重否定)</li><li><strong>B6.</strong> $(p \\prec q) \\cdot (q \\prec r) \\prec (p \\prec r)$ (传递律)</li><li><strong>B7.</strong> $p \\cdot (p \\prec q) \\prec q$ (假言推理的内化)</li></ul><p><strong>四条推理规则 (Rules of Inference)：</strong></p><ol style='margin-left: 20px;'><li><strong>代入规则 (Substitution):</strong> 允许用任意公式一致地替换定理中的命题变元。</li><li><strong>附加规则 (Adjunction):</strong> 若 $\\vdash \\alpha$ 且 $\\vdash \\beta$，则 $\\vdash \\alpha \\cdot \\beta$。（即已证定理的合取仍是定理）。</li><li><strong>分离规则 (Modus Ponens):</strong> 若 $\\vdash \\alpha$ 且 $\\vdash \\alpha \\prec \\beta$，则 $\\vdash \\beta$。</li><li><strong>严格等价替换 (Strict Equivalence Replacement):</strong> 若 $\\vdash \\alpha = \\beta$，且 $\\phi(\\alpha)$ 是包含 $\\alpha$ 的公式，则 $\\vdash \\phi(\\alpha) = \\phi(\\beta)$。在缺乏演绎定理的早期系统中，这一规则对于深层语法归约至关重要。</li></ol>",
+                p_1_logic_box: "<p><strong>形式语言与算子：</strong></p><ul style='margin-left: 20px; margin-bottom: 10px;'><li><strong>命题变元：</strong> $p, q, r, \\dots$</li><li><strong>基本联结词：</strong> 否定 $\\sim p$；逻辑积 $p \\cdot q$（常简写为 $pq$）。</li><li><strong>模态算子：</strong> 可能性 $\\Diamond p$（Lewis 称之为 self-consistent，即自洽的/可能的）。</li></ul><p><strong>核心定义：</strong></p><ul style='margin-left: 20px; margin-bottom: 10px;'><li><strong>严格蕴涵 (Strict Implication):</strong> $p \\prec q =_{def} \\sim\\Diamond(p \\cdot \\sim q)$ （不可能 $p$ 为真且 $q$ 为假）</li><li><strong>严格等价 (Strict Equivalence):</strong> $p = q =_{def} (p \\prec q) \\cdot (q \\prec p)$</li></ul><p><strong>7 条基础公理 (B1-B7)：</strong></p><ul style='list-style-type: none; padding-left: 0;'><li><strong>B1.</strong> $pq \\prec qp$ (交换律)</li><li><strong>B2.</strong> $pq \\prec p$ (析取化简)</li><li><strong>B3.</strong> $p \\prec pp$ (幂等律)</li><li><strong>B4.</strong> $(pq)r \\prec p(qr)$ (结合律)</li><li><strong>B5.</strong> $p \\prec \\sim(\\sim p)$ (双重否定)</li><li><strong>B6.</strong> $(p \\prec q) \\cdot (q \\prec r) \\prec (p \\prec r)$ (传递律)</li><li><strong>B7.</strong> $p \\cdot (p \\prec q) \\prec q$ (假言推理的内化)</li></ul><p><strong>四条推理规则 (Rules of Inference)：</strong></p><ol style='margin-left: 20px;'><li><strong>代入规则 (Substitution):</strong> 允许用任意公式一致地替换定理中的命题变元。</li><li><strong>随伴规则 (Adjunction):</strong> 若 $\\vdash \\alpha$ 且 $\\vdash \\beta$，则 $\\vdash \\alpha \\cdot \\beta$。（即已证定理的合取仍是定理）。</li><li><strong>分离规则 (Modus Ponens):</strong> 若 $\\vdash \\alpha$ 且 $\\vdash \\alpha \\prec \\beta$，则 $\\vdash \\beta$。</li><li><strong>严格等价替换 (Strict Equivalence Replacement):</strong> 若 $\\vdash \\alpha = \\beta$，且 $\\phi(\\alpha)$ 是包含 $\\alpha$ 的公式，则 $\\vdash \\phi(\\alpha) = \\phi(\\beta)$。在缺乏演绎定理的早期系统中，这一规则对于深层语法归约至关重要。</li></ol>",
                 
                 acc_2: "2. 系统的起源：从“模态坍塌”到系统 A 与 B 的分立",
-                p_2_1: "要理解系统 B 的出现，必须追溯到一段著名的历史公案。Lewis 对严格蕴涵的首次系统性探索，发表在 1918 年的独立专著 <a href='#ref-lewis-1918' class='ref-link'><em>A Survey of Symbolic Logic</em></a> 中。在该书的原始演算里，Lewis 将 $(p \\prec q) = (\\sim q \\prec \\sim p)$ 作为一条基本公理。",
-                p_2_2: "然而，美国著名数学家 Emil L. Post 在审视该系统时，敏锐地指出了一个致命缺陷：该公设会导致灾难性的“模态坍塌” (Modal Collapse)。Post 证明，以此为基础可以推导出 $p \\prec q = p \\supset q$（即严格蕴涵等同于实质蕴涵），这意味着系统中所有的模态词都可以被消除，彻底动摇了区分严格/实质蕴涵的哲学初衷。",
+                p_2_1: "要理解系统 B 的出现，必须追溯到一段著名的历史公案。Lewis 对严格蕴涵的首次系统性探索，发表在 1918 年的独立专著 <a href='#ref-lewis-1918' class='ref-link'><em>A Survey of Symbolic Logic</em></a> 中。在该书的原始演算里，Lewis 将 $(p \\prec q) = (\\sim q \\prec \\sim p)$ 作为一条基本公理。 (第一本书的 $\\sim$ 意思是不可能)",
+                p_2_2: "然而，Emil L. Post 在审视该系统时，敏锐地指出了一个致命缺陷：该公设会导致灾难性的“模态坍塌” (Modal Collapse)。Post 证明，以此为基础可以推导出 $p \\prec q = p \\supset q$（即严格蕴涵等同于实质蕴涵），这意味着系统中所有的模态词都可以被消除，彻底动摇了区分严格/实质蕴涵的哲学初衷。",
                 p_2_3: "为了挽救系统，Lewis 在随后的修订中去除了该公理中导致坍塌的一个蕴涵方向。这个经过削弱的 1918 版修订系统，在 1932 年的 <a href='#ref-lewis-1932' class='ref-link'><em>Symbolic Logic</em></a> 中被归档并命名为<strong>系统 A (System A)</strong>。而为了提供一个更稳固的底座，Lewis 和 Langford 在该书的第六章提出了一个平行且重新公理化的全新系统——<strong>系统 B (System B)</strong>。",
-                p_2_4: "虽然系统 B 成功避免了坍塌，当时的学者们对它的性质依然在黑暗中摸索（例如，直到 1934 年 J.C.C. McKinsey 才证明了公理 B5 在特定扩展系统中实际上是多余的）。更紧迫的是，系统 B 暴露出一个巨大的结构性问题：它缺乏处理无限模态迭代（如 $\\Box\\Box p$）的还原法则。这为 Oskar Becker 的登场埋下了伏笔。",
+                p_2_4: "虽然系统 B 成功避免了坍塌，当时的学者们对它的性质依然不清晰（例如，直到 1934 年 J.C.C. McKinsey 才证明了公理 B5 在特定扩展系统中实际上是多余的）。更紧迫的是，系统 B 有一个巨大的结构性问题：它缺乏处理无限模态迭代（如 $\\Box p,\\Box\\Box p,...$）的还原法则。德国学者 Oskar Becker 就此发表了他的研究。",
 
                 acc_3: "3. Oskar Becker 的现象学直观与“十模态演算”",
-                p_3_1: "Oskar Becker (1889–1964) 是德国著名数学家兼哲学家，现象学宗师胡塞尔 (Edmund Husserl) 最杰出的助手之一，并深受布劳威尔 (L.E.J. Brouwer) 直觉主义的影响。在 1930 年的划时代论文 <a href='#ref-becker-1930' class='ref-link'><em>Zur Logik der Modalitäten</em></a> 中，Becker 批评 Lewis 的系统留下了一个“敞口” (<em>eine offene Stelle</em>)——未能对模态算子的无穷迭代进行化约。",
+                p_3_1: "Oskar Becker (1889–1964) 是德国著名数学家兼哲学家，胡塞尔 (Edmund Husserl) 的追随者，并深受布劳威尔 (L.E.J. Brouwer) 直觉主义的影响。在 1930 年的划时代论文《模态逻辑》(<em>Zur Logik der Modalitäten</em>) 中，Becker 批评 Lewis 的系统留下了一个“一个开放的位置” (<em>eine offene Stelle</em>)——未能对模态算子的无穷迭代进行归约。",
+
                 p_3_2: "Becker 绝非在玩弄形式符号，他赋予了模态公理深刻的哲学与现象学内涵。为了封闭系统，他提出了三条著名的归约公理：",
                 p_3_axioms: "<li><strong>公理 4 (C10):</strong> $\\sim\\Diamond\\sim p \\prec \\sim\\Diamond\\sim\\sim\\Diamond\\sim p$ （即 $\\Box p \\prec \\Box\\Box p$）。Becker 认为这反映了证明的自反本性：若 p 的证明状态为必然（已被证明），那么“p已被证明”这一事实本身，也是一个必然的真理。</li><li><strong>公理 B (C12):</strong> $p \\prec \\sim\\Diamond\\sim\\Diamond p$ （即 $p \\prec \\Box\\Diamond p$）。Becker 明确称其为“布劳威尔公理” (<em>Brouwersche Axiom</em>)，它捕捉了直觉主义的直觉：如果 p 是真实的（已被证明），那么它绝不可能被推翻，即它必然是可能的。</li><li><strong>公理 5 (C11):</strong> $\\Diamond p \\prec \\sim\\Diamond\\sim\\Diamond p$ （即 $\\Diamond p \\prec \\Box\\Diamond p$）。</li>",
-                p_3_3: "Becker 正确地指出，加入公理 5 (C11) 会使系统归约为 6 个模态词（即我们熟知的 S5）。但他<strong>错误地断言</strong>：如果同时加入公理 4 和公理 B，会产生一个结构完全不同的、拥有 10 个独立模态词的演算系统 —— <strong>十模态演算 (Zehn-Modalitäten-Kalkül)</strong>，并为此绘制了复杂的模态强度关系图。这一历史性的误判，正在等待一位中国学者的纠正。",
+                p_3_3: "Becker 正确地指出，加入公理 5 (C11) 会使系统归约为 6 个模态词（即我们熟知的 S5）。但他<strong>错误地断言</strong>：如果同时加入公理 4 和公理 B，会产生一个结构完全不同的、拥有 10 个独立模态词的演算系统 —— <strong>十模态演算 (Zehn-Modalitäten-Kalkül)</strong>，并为此绘制了复杂的模态强度关系图。这一历史性的误判，后来由一位中国学者纠正。",
 
                 acc_4: "4. 沈有鼎在哈佛的证明：语法归约的精髓",
-                p_4_1: "1929-1931年间，沈有鼎在哈佛大学师从 H.M. Sheffer 与 Lewis。他敏锐地察觉到了 Becker “十模态演算”的谬误，并在基础极为薄弱的系统 B 中给出了一套极其优雅的纯语法推演。",
+                p_4_1: "1929-1931年间，沈有鼎在哈佛大学师从 H.M. Sheffer。他敏锐地察觉到了 Becker “十模态演算”的谬误，并在基础极为薄弱的系统 B 中给出了一套严谨的纯语法推演。",
                 p_4_2_intro: "今天我们熟知，框架自反性的典范公式 ($ p \\supset \\Diamond p$) 在 Lewis 的系统中是可证的。但在当时的纯句法系统中，缺乏现代语义学视角的加持，要推导出这一点绝非易事。沈有鼎首先构建了以下基础：",
                 p_4_key_steps: "<p><strong>预备推导：自反性定理的重建 (Key Steps)</strong></p><ol style='line-height: 1.8;'><li>$ \\sim p \\prec q \\ \\cdot\\prec\\ \\sim q \\prec p \\quad $ <i>(Prop. 12.2)</i></li><li>$ p = \\sim(\\sim p) \\quad $ <i>(Prop. 12.3)</i></li><li>$ p \\ \\cdot\\prec\\ \\Diamond p \\quad $ <i>(Prop. 18.4)</i></li><li>$ p \\prec \\Diamond p \\ \\cdot\\prec\\ p \\supset \\Diamond p \\quad $</li></ol><p><small>注：命题编号遵循 <i>Symbolic Logic</i> (1932)。</small></p>",
                 p_4_proof_title: "沈有鼎核心推演：证明 System B + C10 + C12 ⊢ C11 (S5)",
@@ -354,15 +356,15 @@
                 p_4_step5: "<strong style='font-size:1.1em; color:#1e8449;'>5. 最终归约 (Final Reduction): $\\Diamond p \\prec \\Box\\Diamond p$ (Q.E.D.)</strong><p style='margin-top:10px; line-height: 1.6;'>观察步骤 4 得出的公式：$\\Diamond p \\prec \\Box\\Diamond\\Diamond p$。<br>由于其包含了 $\\Diamond\\Diamond p$，根据步骤 3 建立的严格等价替换原则 ($\\Diamond\\Diamond p = \\Diamond p$) 进行代换，直接得出结论：<br><span style='font-size:1.3em; color:#145a32; font-weight:bold; display:block; margin-top:10px;'>$\\Diamond p \\prec \\Box\\Diamond p$ &nbsp;&nbsp;&nbsp; (即 C11 / Axiom 5)</span></p><p style='margin-top:10px; font-weight:bold; color:#c0392b;'>至此证明：Becker 的“十模态演算”发生坍塌，系统被语法归约为 S5！</p>",
 
                 acc_5: "5. Wajsberg, Parry 与模态逻辑层级的确立",
-                p_5_1_intro: "沈有鼎对 S5 独立性问题的解决，标志着 1930 年代初期模态逻辑国际学术网络的一次伟大共振。在这一时期，另外两位青年学者同样做出了奠基性的贡献：",
-                p_5_wajsberg: "<strong>Mordchaj Wajsberg (1902–1942):</strong> 波兰华沙逻辑学派的杰出代表，逻辑学大师卢卡西维茨 (Jan Łukasiewicz) 的学生。他在 1933 年独立给出了 S5 系统的一个形式化基础，并在多值逻辑和模态逻辑领域做出了开创性工作。令人痛心的是，这位天才逻辑学家在二战的犹太人大屠杀中不幸遇害。尽管如此，他基于代数化方法的推演与同时代哈佛学者的工作遥相呼应。",
-                p_5_parry: "<strong>William T. Parry (1908–1988):</strong> 美国哲学家，哈佛大学 H.M. Sheffer 与 C.I. Lewis 的学生，也是沈有鼎在哈佛深造期间的同窗挚友。Parry 敏锐地意识到，即便在 Lewis 的严格蕴涵系统中，仍存在类似“不可能命题严格蕴涵任何命题”的悖论。为此，他在 1933 年提出了著名的<strong>分析蕴涵 (Analytic Implication)</strong> 理论，要求蕴涵式的后件中的所有命题变元必须已经在前件中出现，开创了相关逻辑 (Relevance Logic) 的先河。",
-                p_5_2: "在 <a href='#ref-lewis-1932' class='ref-link'><em>Symbolic Logic</em></a> (1932) 的附录二中，Lewis 极为罕见地并列致谢了沈有鼎 (Yuting Shen)、Parry 以及 Wajsberg。这不仅是一段学术佳话，更证明了在克里普克语义学诞生前的三十年，正是依靠这些先驱们在纯语法层面的艰苦推演与归约，才最终确立了今天为人熟知的 <strong>S1 至 S5 模态系统层级</strong>。",
+               
+                
+                
+                p_5_2: "在 <em>Symbolic Logic</em> (1932) 的附录二中，Lewis 记载了沈有鼎 (Yuting Shen)、Parry 以及 Wajsberg的工作。其中也包括S5蕴含S4+B的证明。通过他们的共同工作，Lewis确定了多个今天为人熟知的模态逻辑系统关系，并最终确定了 <strong>S1 至 S5 模态系统层级</strong>。",
 
                 acc_6: "6. 历史意义：为代数/拓扑语义扫清障碍",
                 p_6_1: "沈有鼎等人的工作，其最伟大的历史意义在于完成了纯语法 (Syntax) 层面的彻底清理，极大地解放了后来的语义学 (Semantics) 研究。",
-                p_6_2: "试想，如果 Becker 的论断没有被推翻，后来的数学家在寻找模态逻辑的数学模型时，将不得不去痛苦地构造一个对应所谓“十模态演算”的变态拓扑空间。沈有鼎明确指出 S4 + B 必然坍塌为 S5，这意味着未来的语义提供者只需聚焦于 S4 和 S5 极其明确的数学结构即可。",
-                p_6_3: "后来 McKinsey 和 Tarski 提出了著名的拓扑代数语义：S4 的 $\\Box$ 对应拓扑空间的“内部 (Interior)”，$\\Diamond$ 对应“闭包 (Closure)”。虽然当时的数学家未必立刻意识到，一个 <em>dense-in-itself</em> (自身稠密) 的代数加上对应公理 B 的性质，会产生与加上公理 5 一模一样的代数结构，但这种数学深处的等价性，早在沈有鼎的几行语法符号代换中，就已经被宿命般地预言和证明了。",
+                p_6_2: "试想，如果 Becker 的论断没有被沈有鼎的推演推翻，后来的数学家在寻找模态逻辑的数学模型时，将不得不去尝试构造一个对应所谓“十模态演算”的拓扑空间。沈有鼎明确指出 S4 + B 蕴含 S5，这意味着未来的语义提供者在给S4提供语义后，可以直接考虑 S5对应的数学结构即可。",
+                p_6_3: "后来 McKinsey 和 Tarski 提出了著名的拓扑代数语义：S4 的 $\\Box$ 对应拓扑空间的“内部 (Interior)”，$\\Diamond$ 对应“闭包 (Closure)”。虽然当时的数学家未必立刻意识到，一个 <em>dense-in-itself</em> (自身稠密) 的代数加上对应公理 B 的性质，会产生与加上公理 5 一模一样的代数结构。",
 
                 slides_title: "📊 AWPL 学术报告",
                 slides_desc: "本版块研究的基础内容已在 AWPL 上进行了汇报。您可以查看或下载当时的演示幻灯片：",
@@ -373,8 +375,8 @@
                 slides_title: "📊 AWPL Presentation",
                 slides_desc: "The foundations of this research were presented at AWPL. You can view or download the presentation slides here:",
                 slides_link: "🔗 <strong>Slides Link:</strong> <a href='https://slides-6xr.pages.dev/Shen_yuting_awpl' target='_blank' style='color: #c0392b; font-weight: bold;'>Shen Yuting in Early Modal Logic (Slides)</a>",
-                p_5_1: "Shen's resolution of the S5 independence problem marked a great resonance in the 1930s international modal logic network. Concurrently, two other young scholars made foundational contributions:",
-                p_5_wajsberg: "<strong>Mordchaj Wajsberg (1902–1942):</strong> A brilliant representative of the Warsaw School of logic and student of Jan Łukasiewicz. He independently provided a formal foundation for S5 in 1933 and made pioneering contributions to many-valued and modal logic. Tragically, this genius logician perished in the Holocaust. Nevertheless, his algebraic derivations echoed the contemporary work of Harvard scholars.",
+                p_5_1: "Besides Shen, two other young scholars made foundational contributions at the same time:",
+                p_5_wajsberg: "<strong>Mordchaj Wajsberg (1902–1942):</strong> A representative of the Warsaw School of logic and student of Jan Łukasiewicz. He independently provided a formal foundation for S5 in 1933 and made pioneering contributions to many-valued and modal logic. Tragically, he perished in the Holocaust. Nevertheless, he shared his studies with C.I.Lewis.",
                 p_5_parry: "<strong>William T. Parry (1908–1988):</strong> American philosopher, student of W.H. Whitehead at Harvard, and Shen Yuting's close classmate. Parry astutely realized that even in Lewis's strict implication, paradoxes akin to 'an impossible proposition strictly implies any proposition' remained. Thus, in 1933, he proposed the famous <strong>Analytic Implication</strong> theory, requiring all propositional variables in the consequent to already appear in the antecedent, pioneering Relevance Logic.",
                 p_4_2_intro: "Today we know that the canonical formula of frame reflexivity ($ p \\supset \\Diamond p$) is provable in Lewis's systems. But in the pure syntactic systems of that time, lacking the perspective of modern semantics, deriving this was no easy task. Shen first established the following foundations:",
                 p_3_axioms: "<li><strong>Axiom 4 (C10):</strong> $\\sim\\Diamond\\sim p \\prec \\sim\\Diamond\\sim\\sim\\Diamond\\sim p$ (i.e., $\\Box p \\prec \\Box\\Box p$). Becker believed this reflected the reflexive nature of proof: if the proof status of p is necessary (already proven), then the fact that 'p is already proven' is itself a necessary truth.</li><li><strong>Axiom B (C12):</strong> $p \\prec \\sim\\Diamond\\sim\\Diamond p$ (i.e., $p \\prec \\Box\\Diamond p$). Becker explicitly called this the 'Brouwersche Axiom', capturing the intuitionist view: if p is true (proven), it can never be refuted, meaning it is necessarily possible.</li><li><strong>Axiom 5 (C11):</strong> $\\Diamond p \\prec \\sim\\Diamond\\sim\\Diamond p$ (i.e., $\\Diamond p \\prec \\Box\\Diamond p$).</li>",
@@ -388,19 +390,19 @@
                 p_1_logic_box: "<p><strong>Formal Language and Operators:</strong></p><ul style='margin-left: 20px; margin-bottom: 10px;'><li><strong>Propositional Variables:</strong> $p, q, r, \\dots$</li><li><strong>Connectives:</strong> Negation $\\sim p$; Logical product $p \\cdot q$ (often written $pq$).</li><li><strong>Modal Operator:</strong> Possibility $\\Diamond p$ (Lewis called it 'self-consistent').</li></ul><p><strong>Core Definitions:</strong></p><ul style='margin-left: 20px; margin-bottom: 10px;'><li><strong>Strict Implication:</strong> $p \\prec q =_{def} \\sim\\Diamond(p \\cdot \\sim q)$ (Impossible for $p$ to be true and $q$ false)</li><li><strong>Strict Equivalence:</strong> $p = q =_{def} (p \\prec q) \\cdot (q \\prec p)$</li></ul><p><strong>7 Basic Axioms (B1-B7):</strong></p><ul style='list-style-type: none; padding-left: 0;'><li><strong>B1.</strong> $pq \\prec qp$ (Commutativity)</li><li><strong>B2.</strong> $pq \\prec p$ (Simplification)</li><li><strong>B3.</strong> $p \\prec pp$ (Idempotency)</li><li><strong>B4.</strong> $(pq)r \\prec p(qr)$ (Associativity)</li><li><strong>B5.</strong> $p \\prec \\sim(\\sim p)$ (Double Negation)</li><li><strong>B6.</strong> $(p \\prec q) \\cdot (q \\prec r) \\prec (p \\prec r)$ (Transitivity)</li><li><strong>B7.</strong> $p \\cdot (p \\prec q) \\prec q$ (Internalized Modus Ponens)</li></ul><p><strong>Rules of Inference:</strong></p><ol style='margin-left: 20px;'><li><strong>Substitution:</strong> Uniform replacement of variables in a theorem.</li><li><strong>Adjunction:</strong> If $\\vdash \\alpha$ and $\\vdash \\beta$, then $\\vdash \\alpha \\cdot \\beta$.</li><li><strong>Modus Ponens:</strong> If $\\vdash \\alpha$ and $\\vdash \\alpha \\prec \\beta$, then $\\vdash \\beta$.</li><li><strong>Strict Equivalence Replacement:</strong> If $\\vdash \\alpha = \\beta$, then $\\vdash \\phi(\\alpha) = \\phi(\\beta)$. Crucial for deep syntactic reduction in early systems lacking the deduction theorem.</li></ol>",
                 
                 acc_2: "2. System Origins: From 'Modal Collapse' to System A and B",
-                p_2_1: "Lewis's first systematic exploration of strict implication appeared in his 1918 <a href='#ref-lewis-1918' class='ref-link'><em>A Survey of Symbolic Logic</em></a>. In its original calculus, Lewis included $(p \\prec q) = (\\sim q \\prec \\sim p)$ as a basic axiom.",
+                p_2_1: "Lewis's first systematic exploration of strict implication appeared in his 1918 <a href='#ref-lewis-1918' class='ref-link'><em>A Survey of Symbolic Logic</em></a>. In its original calculus, Lewis included $(p \\prec q) = (\\sim q \\prec \\sim p)$ as a basic axiom. (In the first book, $\\sim$ means 'it is impossible')",
                 p_2_2: "However, Emil L. Post pointed out a fatal flaw: this postulate leads to a catastrophic 'Modal Collapse'. Post proved it derives $p \\prec q = p \\supset q$ (strict equals material implication), eliminating all modal operators and shaking the philosophical foundation of the system.",
                 p_2_3: "To salvage the system, Lewis removed the direction causing the collapse in the 1932 <a href='#ref-lewis-1932' class='ref-link'><em>Symbolic Logic</em></a>, forming <strong>System A</strong>. Concurrently, in Chapter VI, Lewis and Langford introduced a parallel, re-axiomatized foundation—<strong>System B</strong>.",
-                p_2_4: "While System B avoided collapse, scholars remained in the dark (e.g., McKinsey only proved Axiom B5 redundant in 1934). More pressingly, System B lacked rules to reduce infinite modal iterations (like $\\Box\\Box p$), setting the stage for Oskar Becker.",
+                p_2_4: "While System B avoided collapse, scholars remained in the dark (e.g., McKinsey only proved Axiom B5 redundant in 1934). More pressingly, System B lacked rules to handle infinite modalities (like $\\Box p, \\Box\\Box p,...$), setting the stage for Oskar Becker.",
 
                 acc_3: "3. Oskar Becker's Phenomenological Intuition and the 'Ten-Modality Calculus'",
-                p_3_1: "Oskar Becker (1889–1964), a prominent mathematician/philosopher, Husserl's assistant, and influenced by Brouwer's intuitionism, viewed modal operators as 'eidetic intuition'. In his 1930 <a href='#ref-becker-1930' class='ref-link'><em>Zur Logik der Modalitäten</em></a>, he identified the unreduced iterations as an 'open position' (<em>eine offene Stelle</em>).",
+                p_3_1: "Oskar Becker (1889–1964), a follower of Husserl, and influenced by Brouwer's intuitionism, viewed modal operators as 'eidetic intuition'. In his 1930 <a href='#ref-becker-1930' class='ref-link'><em>Zur Logik der Modalitäten</em></a>, he identified the unreduced iterations as an 'open position' (<em>eine offene Stelle</em>).",
                 p_3_2: "Becker proposed three philosophically profound reduction axioms:",
-                p_3_axioms: "<li><strong>Axiom 4 (C10):</strong> $\\sim\\Diamond\\sim p \\prec \\sim\\Diamond\\sim\\sim\\Diamond\\sim p$ (i.e., $\\Box p \\prec \\Box\\Box p$). Reflecting the reflexive nature of proof.</li><li><strong>Axiom B (C12):</strong> $p \\prec \\sim\\Diamond\\sim\\Diamond p$ (i.e., $p \\prec \\Box\\Diamond p$). The <em>Brouwersche Axiom</em>: what is true can never be refuted, thus necessarily possible.</li><li><strong>Axiom 5 (C11):</strong> $\\Diamond p \\prec \\sim\\Diamond\\sim\\Diamond p$ (i.e., $\\Diamond p \\prec \\Box\\Diamond p$).</li>",
-                p_3_3: "Becker correctly predicted C11 yields S5. But he <strong>incorrectly asserted</strong> that adding C10 and C12 creates a completely different 10-modality system—the <strong>Zehn-Modalitäten-Kalkül</strong>. A Chinese scholar was about to correct this historical misjudgment.",
+                p_3_axioms: "<li><strong>Axiom 4 (C10):</strong> $\\sim\\Diamond\\sim p \\prec \\sim\\Diamond\\sim\\sim\\Diamond\\sim p$ . Reflecting the reflexive nature of proof.</li><li><strong>Axiom B (C12):</strong> $p \\prec \\sim\\Diamond\\sim\\Diamond p$ . The <em>Brouwersche Axiom</em>: what is true can never be refuted, thus necessarily possible.</li><li><strong>Axiom 5 (C11):</strong> $\\Diamond p \\prec \\sim\\Diamond\\sim\\Diamond p$ .</li>",
+                p_3_3: "Becker correctly predicted C11 yields S5. But he <strong>incorrectly asserted</strong> that adding C10 and C12 creates a completely different 10-modality system—the <strong>Zehn-Modalitäten-Kalkül</strong>. A Chinese scholar was about to correct this misjudgment.",
 
                 acc_4: "4. Shen Yuting's Proof at Harvard: The Essence of Syntactic Reduction",
-                p_4_1: "Between 1929-1931, Shen Yuting studied under H.M. Sheffer and Lewis at Harvard. He detected the fallacy of Becker's 'Ten-Modality Calculus' and provided an elegant syntactic proof within the minimal System B.",
+                p_4_1: "Between 1929-1931, Shen Yuting studied under H.M. Sheffer at Harvard. He detected the fallacy of Becker's 'Ten-Modality Calculus' and provided a rigorous pure syntactic proof within the minimal System B.",
                 p_4_2_intro: "Today we know the reflexivity formula ($ p \\supset \\Diamond p$) is provable in Lewis's systems, but without modern semantics, this syntactic derivation was non-trivial. Shen first established:",
                 p_4_key_steps: "<p><strong>Key Steps: Reconstruction of Reflexivity</strong></p><ol style='line-height: 1.8;'><li>$ \\sim p \\prec q \\ \\cdot\\prec\\ \\sim q \\prec p \\quad $ <i>(Prop. 12.2)</i></li><li>$ p = \\sim(\\sim p) \\quad $ <i>(Prop. 12.3)</i></li><li>$ p \\ \\cdot\\prec\\ \\Diamond p \\quad $ <i>(Prop. 18.4)</i></li><li>$ p \\prec \\Diamond p \\ \\cdot\\prec\\ p \\supset \\Diamond p \\quad $</li></ol><p><small>Note: Props follow <i>Symbolic Logic</i> (1932).</small></p>",
                 p_4_proof_title: "Shen's Core Proof: System B + C10 + C12 ⊢ C11 (S5)",
@@ -411,15 +413,15 @@
                 p_4_step5: "<strong style='font-size:1.1em; color:#1e8449;'>5. Final Reduction: $\\Diamond p \\prec \\Box\\Diamond p$ (Q.E.D.)</strong><p style='margin-top:10px; line-height: 1.6;'>Step 4 contains $\\Diamond\\Diamond p$.<br>Substitute using Strict Equivalence from Step 3 ($\\Diamond\\Diamond p = \\Diamond p$):<br><span style='font-size:1.3em; color:#145a32; font-weight:bold; display:block; margin-top:10px;'>$\\Diamond p \\prec \\Box\\Diamond p$ &nbsp;&nbsp;&nbsp; (i.e., C11 / Axiom 5)</span></p><p style='margin-top:10px; font-weight:bold; color:#c0392b;'>This proved Becker's 'Ten-Modality Calculus' collapses into S5!</p>",
 
                 acc_5: "5. Wajsberg, Parry, and the Hierarchy of Modal Logic",
-                p_5_1_intro: "Shen's resolution of S5 independence marked a great resonance in the 1930s modal logic network. Concurrently, two other young scholars made foundational contributions:",
-                p_5_wajsberg: "<strong>Mordchaj Wajsberg (1902–1942):</strong> A brilliant representative of the Warsaw School and student of Jan Łukasiewicz. He independently proved S5 completeness in 1933. Tragically murdered in the Holocaust, his algebraic approach echoed the contemporary work at Harvard.",
-                p_5_parry: "<strong>William T. Parry (1908–1988):</strong> American philosopher, student of Lewis, and Shen's close friend. To solve relevance paradoxes in strict implication, he proposed <strong>Analytic Implication</strong> in 1933, pioneering Relevance Logic.",
-                p_5_2: "In the 1932 <a href='#ref-lewis-1932' class='ref-link'><em>Symbolic Logic</em></a> Appendix II, Lewis concurrently acknowledged Shen, Parry, and Wajsberg. Their joint syntactic efforts thirty years before Kripke semantics definitively established the <strong>S1 to S5 hierarchy</strong>.",
+                
+                
+                
+                p_5_2: "In the 1932 <a href='#ref-lewis-1932' class='ref-link'><em>Symbolic Logic</em></a> Appendix II, Lewis recorded Shen, Parry, and Wajsberg's contributions including the converse of Shen's derivation. By their joint work, many relationships between modal systems were discovered and they put forward the famous systems <strong>S1 to S5 hierarchy</strong>.",
 
                 acc_6: "6. Significance: Clearing the Way for Semantics",
                 p_6_1: "The greatest historical significance of Shen's work is the complete syntactic cleanup, which liberated future semantic research.",
-                p_6_2: "Had Becker's assertion stood, mathematicians would have suffered constructing bizarre topological spaces for a 'ten-modality calculus'. Shen proved S4 + B collapses to S5, narrowing the focus to these two distinct structures.",
-                p_6_3: "When McKinsey and Tarski proposed topological semantics ($\\Box$ as 'Interior', $\\Diamond$ as 'Closure'), mathematicians might not have immediately realized a <em>dense-in-itself</em> algebra plus Axiom B properties yields the same structure as adding Axiom 5. Shen's syntactic substitution had already prophesied this mathematical equivalence.",
+                p_6_2: "Had Becker's assertion stood, mathematicians would have suffered constructing topological spaces for a 'ten-modality calculus' after they found dense-in-itself algebra for S4. Shen proved S4 + B implies S5, narrowing the focus to these two distinct structures.",
+                p_6_3: "When McKinsey and Tarski proposed topological semantics ($\\Box$ as 'Interior', $\\Diamond$ as 'Closure'), mathematicians might not have immediately realized a <em>dense-in-itself</em> algebra plus Axiom B properties yields the same structure as adding Axiom 5.",
 
                 slides_title: "📊 AWPL Presentation",
                 slides_desc: "The foundations of this research were presented at AWPL. View the slides below:",
